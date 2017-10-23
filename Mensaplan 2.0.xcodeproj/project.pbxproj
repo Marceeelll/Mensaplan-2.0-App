@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F2235B51F9D2AE80089515C /* UserProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2235B41F9D2AE80089515C /* UserProfileData.swift */; };
+		0F2548D11F99C01800CE8A26 /* MensaSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2548D01F99C01800CE8A26 /* MensaSelectionViewController.swift */; };
+		0F2548D51F99D5D400CE8A26 /* DetailMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2548D41F99D5D400CE8A26 /* DetailMealViewController.swift */; };
+		0F2548D71F99DA0600CE8A26 /* UIStepSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2548D61F99DA0600CE8A26 /* UIStepSlider.swift */; };
+		0F4BAD111F9D1E6000F4AFFA /* AllergiesTableViewSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BAD101F9D1E6000F4AFFA /* AllergiesTableViewSelectionDelegate.swift */; };
+		0F4BAD131F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BAD121F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift */; };
+		0F4BAD151F9D1E9F00F4AFFA /* HandicapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BAD141F9D1E9F00F4AFFA /* HandicapController.swift */; };
+		0F4BAD171F9D1EC000F4AFFA /* Extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BAD161F9D1EC000F4AFFA /* Extension+NotificationName.swift */; };
+		0F4BAD191F9D200400F4AFFA /* AllergiesSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BAD181F9D200400F4AFFA /* AllergiesSelectionDelegate.swift */; };
+		0F574F1F1F99427A00838701 /* MensaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F574F1E1F99427A00838701 /* MensaData.swift */; };
+		0F5869931F98F20F00DE2462 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5869921F98F20F00DE2462 /* AppColor.swift */; };
+		0F5869A11F98F38800DE2462 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5869A01F98F38800DE2462 /* Extension+UIView.swift */; };
+		0F5869A31F98F4AB00DE2462 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5869A21F98F4AB00DE2462 /* Default-568h@2x.png */; };
+		0F59138B1F97F6B500B87C18 /* UIPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59138A1F97F6B500B87C18 /* UIPriceView.swift */; };
+		0F59138E1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59138D1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift */; };
+		0F5913901F97F8C500B87C18 /* UIMealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59138F1F97F8C500B87C18 /* UIMealIconView.swift */; };
+		0F6AFD3D1F9DAC5000ED2917 /* ImpressumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AFD3C1F9DAC5000ED2917 /* ImpressumViewController.swift */; };
+		0F6AFD431F9DAFB000ED2917 /* UISpeiseplanTableViewLegendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AFD421F9DAFB000ED2917 /* UISpeiseplanTableViewLegendCell.swift */; };
+		0F8DED991F9A69D8001F6507 /* SpeiseplanTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DED981F9A69D8001F6507 /* SpeiseplanTableViewDelegate.swift */; };
+		0F8DED9B1F9A69E9001F6507 /* SpeiseplanTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DED9A1F9A69E9001F6507 /* SpeiseplanTableViewDataSource.swift */; };
+		0F8DED9D1F9A69FF001F6507 /* Canteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DED9C1F9A69FF001F6507 /* Canteen.swift */; };
+		0F8DED9F1F9A6A15001F6507 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DED9E1F9A6A15001F6507 /* Extension+Date.swift */; };
+		0F937D0F1F9706A500A65F9D /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F937D0E1F9706A500A65F9D /* Extension+String.swift */; };
+		0F937D131F97623F00A65F9D /* MensaInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F937D121F97623F00A65F9D /* MensaInfoViewController.swift */; };
+		0F937D151F9767C700A65F9D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F937D141F9767C700A65F9D /* SettingViewController.swift */; };
+		0FA3FE231F9A74AF00A72A5F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */; };
+		0FA3FE251F9A74BF00A72A5F /* AllergyTyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */; };
+		0FA3FE271F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE261F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift */; };
+		0FA3FE291F9A750B00A72A5F /* MensaSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE281F9A750B00A72A5F /* MensaSelectionDelegate.swift */; };
+		0FA3FE2B1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE2A1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift */; };
+		0FA3FE2E1F9A77A200A72A5F /* AllergiesSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE2D1F9A77A200A72A5F /* AllergiesSelectionTableViewController.swift */; };
+		0FC2476C1F9919BB00D1560F /* MensaDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2476B1F9919BB00D1560F /* MensaDownloadController.swift */; };
+		0FC2476F1F99306000D1560F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2476E1F99306000D1560F /* Network.swift */; };
+		0FC247721F99307E00D1560F /* MensaDownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC247711F99307E00D1560F /* MensaDownloadDelegate.swift */; };
+		0FC247741F9930A700D1560F /* NetworkSupervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC247731F9930A700D1560F /* NetworkSupervisor.swift */; };
+		0FC247761F9930B800D1560F /* FetchDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC247751F9930B800D1560F /* FetchDataDelegate.swift */; };
+		0FC247781F9930D100D1560F /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC247771F9930D100D1560F /* FetchData.swift */; };
+		0FCBFAA01F9D078B003F9AC0 /* IngredientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */; };
+		0FE2E63E1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2E63D1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift */; };
+		0FE2E6401F9C9EA200D14374 /* UIDownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2E63F1F9C9EA200D14374 /* UIDownloadProgressView.swift */; };
+		0FECC0FD1F964E3900DE920B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC0FC1F964E3900DE920B /* AppDelegate.swift */; };
+		0FECC0FF1F964E3900DE920B /* SpeiseplanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC0FE1F964E3900DE920B /* SpeiseplanViewController.swift */; };
+		0FECC1021F964E3900DE920B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FECC1001F964E3900DE920B /* Main.storyboard */; };
+		0FECC1071F964E3900DE920B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FECC1051F964E3900DE920B /* LaunchScreen.storyboard */; };
+		0FECC10F1F964E8D00DE920B /* PriceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC10E1F964E8D00DE920B /* PriceLevel.swift */; };
+		0FECC1121F964EA900DE920B /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC1111F964EA900DE920B /* Price.swift */; };
+		0FECC1141F964F0900DE920B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC1131F964F0900DE920B /* Global.swift */; };
+		0FECC1161F9650B300DE920B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC1151F9650B300DE920B /* Meal.swift */; };
+		0FECC1181F96515000DE920B /* MealCategorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC1171F96515000DE920B /* MealCategorie.swift */; };
+		0FECC11A1F9651E900DE920B /* MensaDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC1191F9651E900DE920B /* MensaDay.swift */; };
+		0FECC11C1F9652A900DE920B /* MensaDayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC11B1F9652A900DE920B /* MensaDayParser.swift */; };
+		0FF3FFE21F9A4729006B6A51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF3FFE11F9A4729006B6A51 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F2235B41F9D2AE80089515C /* UserProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileData.swift; sourceTree = "<group>"; };
+		0F2548D01F99C01800CE8A26 /* MensaSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionViewController.swift; sourceTree = "<group>"; };
+		0F2548D41F99D5D400CE8A26 /* DetailMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealViewController.swift; sourceTree = "<group>"; };
+		0F2548D61F99DA0600CE8A26 /* UIStepSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepSlider.swift; sourceTree = "<group>"; };
+		0F4BAD101F9D1E6000F4AFFA /* AllergiesTableViewSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesTableViewSelectionDelegate.swift; sourceTree = "<group>"; };
+		0F4BAD121F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesTableViewSelectionDataSource.swift; sourceTree = "<group>"; };
+		0F4BAD141F9D1E9F00F4AFFA /* HandicapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandicapController.swift; sourceTree = "<group>"; };
+		0F4BAD161F9D1EC000F4AFFA /* Extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NotificationName.swift"; sourceTree = "<group>"; };
+		0F4BAD181F9D200400F4AFFA /* AllergiesSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesSelectionDelegate.swift; sourceTree = "<group>"; };
+		0F574F1E1F99427A00838701 /* MensaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaData.swift; sourceTree = "<group>"; };
+		0F5869921F98F20F00DE2462 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		0F5869A01F98F38800DE2462 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		0F5869A21F98F4AB00DE2462 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0F59138A1F97F6B500B87C18 /* UIPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPriceView.swift; sourceTree = "<group>"; };
+		0F59138D1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpeiseplanTableViewCell.swift; sourceTree = "<group>"; };
+		0F59138F1F97F8C500B87C18 /* UIMealIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMealIconView.swift; sourceTree = "<group>"; };
+		0F6AFD3C1F9DAC5000ED2917 /* ImpressumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressumViewController.swift; sourceTree = "<group>"; };
+		0F6AFD421F9DAFB000ED2917 /* UISpeiseplanTableViewLegendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpeiseplanTableViewLegendCell.swift; sourceTree = "<group>"; };
+		0F8DED981F9A69D8001F6507 /* SpeiseplanTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeiseplanTableViewDelegate.swift; sourceTree = "<group>"; };
+		0F8DED9A1F9A69E9001F6507 /* SpeiseplanTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeiseplanTableViewDataSource.swift; sourceTree = "<group>"; };
+		0F8DED9C1F9A69FF001F6507 /* Canteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canteen.swift; sourceTree = "<group>"; };
+		0F8DED9E1F9A6A15001F6507 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		0F937D0E1F9706A500A65F9D /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		0F937D121F97623F00A65F9D /* MensaInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaInfoViewController.swift; sourceTree = "<group>"; };
+		0F937D141F9767C700A65F9D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTyp.swift; sourceTree = "<group>"; };
+		0FA3FE261F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionTableViewDelegate.swift; sourceTree = "<group>"; };
+		0FA3FE281F9A750B00A72A5F /* MensaSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionDelegate.swift; sourceTree = "<group>"; };
+		0FA3FE2A1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionTableViewDataSource.swift; sourceTree = "<group>"; };
+		0FA3FE2D1F9A77A200A72A5F /* AllergiesSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesSelectionTableViewController.swift; sourceTree = "<group>"; };
+		0FC2476B1F9919BB00D1560F /* MensaDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDownloadController.swift; sourceTree = "<group>"; };
+		0FC2476E1F99306000D1560F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0FC247711F99307E00D1560F /* MensaDownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDownloadDelegate.swift; sourceTree = "<group>"; };
+		0FC247731F9930A700D1560F /* NetworkSupervisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSupervisor.swift; sourceTree = "<group>"; };
+		0FC247751F9930B800D1560F /* FetchDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataDelegate.swift; sourceTree = "<group>"; };
+		0FC247771F9930D100D1560F /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientController.swift; sourceTree = "<group>"; };
+		0FE2E63D1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpeiseplanTableViewDateCell.swift; sourceTree = "<group>"; };
+		0FE2E63F1F9C9EA200D14374 /* UIDownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDownloadProgressView.swift; sourceTree = "<group>"; };
+		0FECC0F91F964E3900DE920B /* Mensaplan 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mensaplan 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FECC0FC1F964E3900DE920B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FECC0FE1F964E3900DE920B /* SpeiseplanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeiseplanViewController.swift; sourceTree = "<group>"; };
+		0FECC1011F964E3900DE920B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FECC1061F964E3900DE920B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FECC1081F964E3900DE920B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FECC10E1F964E8D00DE920B /* PriceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLevel.swift; sourceTree = "<group>"; };
+		0FECC1111F964EA900DE920B /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		0FECC1131F964F0900DE920B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		0FECC1151F9650B300DE920B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		0FECC1171F96515000DE920B /* MealCategorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategorie.swift; sourceTree = "<group>"; };
+		0FECC1191F9651E900DE920B /* MensaDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDay.swift; sourceTree = "<group>"; };
+		0FECC11B1F9652A900DE920B /* MensaDayParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDayParser.swift; sourceTree = "<group>"; };
+		0FF3FFE11F9A4729006B6A51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FECC0F61F964E3900DE920B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F2548D21F99D5A800CE8A26 /* Speise-Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0F2548D31F99D5C100CE8A26 /* ViewController */,
+			);
+			path = "Speise-Detail";
+			sourceTree = "<group>";
+		};
+		0F2548D31F99D5C100CE8A26 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F2548D41F99D5D400CE8A26 /* DetailMealViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F4BAD0F1F9D1E4F00F4AFFA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3FE2D1F9A77A200A72A5F /* AllergiesSelectionTableViewController.swift */,
+				0F4BAD101F9D1E6000F4AFFA /* AllergiesTableViewSelectionDelegate.swift */,
+				0F4BAD121F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F5869941F98F28C00DE2462 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0F6AFD3B1F9DAC3D00ED2917 /* Impressum */,
+				0F58699D1F98F2C400DE2462 /* ViewController */,
+				0F8DED971F9A689D001F6507 /* UIElemente */,
+				0F6F3D511F98F9FF00F5B0AA /* Mensa-Selection */,
+				0FA3FE2C1F9A776100A72A5F /* Allergy-Selection */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0F5869951F98F29100DE2462 /* Speiseplan */ = {
+			isa = PBXGroup;
+			children = (
+				0F5869981F98F2A900DE2462 /* ViewController */,
+				0F59138C1F97F71800B87C18 /* UIElemente */,
+				0F2548D21F99D5A800CE8A26 /* Speise-Detail */,
+			);
+			path = Speiseplan;
+			sourceTree = "<group>";
+		};
+		0F5869961F98F29800DE2462 /* Mensainfo */ = {
+			isa = PBXGroup;
+			children = (
+				0F5869991F98F2B200DE2462 /* ViewController */,
+			);
+			path = Mensainfo;
+			sourceTree = "<group>";
+		};
+		0F5869981F98F2A900DE2462 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC0FE1F964E3900DE920B /* SpeiseplanViewController.swift */,
+				0F8DED981F9A69D8001F6507 /* SpeiseplanTableViewDelegate.swift */,
+				0F8DED9A1F9A69E9001F6507 /* SpeiseplanTableViewDataSource.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F5869991F98F2B200DE2462 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F937D121F97623F00A65F9D /* MensaInfoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F58699D1F98F2C400DE2462 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F937D141F9767C700A65F9D /* SettingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F58699F1F98F32900DE2462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC0FC1F964E3900DE920B /* AppDelegate.swift */,
+				0FECC1051F964E3900DE920B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F59138C1F97F71800B87C18 /* UIElemente */ = {
+			isa = PBXGroup;
+			children = (
+				0F59138A1F97F6B500B87C18 /* UIPriceView.swift */,
+				0F59138D1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift */,
+				0F59138F1F97F8C500B87C18 /* UIMealIconView.swift */,
+				0FE2E63D1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift */,
+				0FE2E63F1F9C9EA200D14374 /* UIDownloadProgressView.swift */,
+				0F6AFD421F9DAFB000ED2917 /* UISpeiseplanTableViewLegendCell.swift */,
+			);
+			path = UIElemente;
+			sourceTree = "<group>";
+		};
+		0F6AFD3B1F9DAC3D00ED2917 /* Impressum */ = {
+			isa = PBXGroup;
+			children = (
+				0F6AFD3E1F9DAC5500ED2917 /* ViewController */,
+			);
+			path = Impressum;
+			sourceTree = "<group>";
+		};
+		0F6AFD3E1F9DAC5500ED2917 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F6AFD3C1F9DAC5000ED2917 /* ImpressumViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F6F3D511F98F9FF00F5B0AA /* Mensa-Selection */ = {
+			isa = PBXGroup;
+			children = (
+				0F6F3D521F98FA0D00F5B0AA /* ViewController */,
+			);
+			path = "Mensa-Selection";
+			sourceTree = "<group>";
+		};
+		0F6F3D521F98FA0D00F5B0AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F2548D01F99C01800CE8A26 /* MensaSelectionViewController.swift */,
+				0FA3FE261F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift */,
+				0FA3FE2A1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0F8DED951F9A6869001F6507 /* Network Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FC2476B1F9919BB00D1560F /* MensaDownloadController.swift */,
+				0FC2476E1F99306000D1560F /* Network.swift */,
+				0FC247771F9930D100D1560F /* FetchData.swift */,
+			);
+			path = "Network Controller";
+			sourceTree = "<group>";
+		};
+		0F8DED961F9A6874001F6507 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC11B1F9652A900DE920B /* MensaDayParser.swift */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		0F8DED971F9A689D001F6507 /* UIElemente */ = {
+			isa = PBXGroup;
+			children = (
+				0F2548D61F99DA0600CE8A26 /* UIStepSlider.swift */,
+			);
+			path = UIElemente;
+			sourceTree = "<group>";
+		};
+		0F937D0D1F97069600A65F9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F937D0E1F9706A500A65F9D /* Extension+String.swift */,
+				0F5869A01F98F38800DE2462 /* Extension+UIView.swift */,
+				0F8DED9E1F9A6A15001F6507 /* Extension+Date.swift */,
+				0F4BAD161F9D1EC000F4AFFA /* Extension+NotificationName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0FA3FE2C1F9A776100A72A5F /* Allergy-Selection */ = {
+			isa = PBXGroup;
+			children = (
+				0F4BAD0F1F9D1E4F00F4AFFA /* ViewController */,
+			);
+			path = "Allergy-Selection";
+			sourceTree = "<group>";
+		};
+		0FC2476D1F992FFF00D1560F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F8DED951F9A6869001F6507 /* Network Controller */,
+				0F8DED961F9A6874001F6507 /* HTMLParser */,
+				0F4BAD141F9D1E9F00F4AFFA /* HandicapController.swift */,
+				0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FC247701F99307200D1560F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0FC247711F99307E00D1560F /* MensaDownloadDelegate.swift */,
+				0FC247731F9930A700D1560F /* NetworkSupervisor.swift */,
+				0FC247751F9930B800D1560F /* FetchDataDelegate.swift */,
+				0FA3FE281F9A750B00A72A5F /* MensaSelectionDelegate.swift */,
+				0F4BAD181F9D200400F4AFFA /* AllergiesSelectionDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0FECC0F01F964E3900DE920B = {
+			isa = PBXGroup;
+			children = (
+				0F5869A21F98F4AB00DE2462 /* Default-568h@2x.png */,
+				0FECC0FB1F964E3900DE920B /* Mensaplan 2.0 */,
+				0FECC0FA1F964E3900DE920B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FECC0FA1F964E3900DE920B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC0F91F964E3900DE920B /* Mensaplan 2.0.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FECC0FB1F964E3900DE920B /* Mensaplan 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0FF3FFE11F9A4729006B6A51 /* Assets.xcassets */,
+				0FECC1081F964E3900DE920B /* Info.plist */,
+				0FECC1001F964E3900DE920B /* Main.storyboard */,
+				0FECC1131F964F0900DE920B /* Global.swift */,
+				0F5869921F98F20F00DE2462 /* AppColor.swift */,
+				0FC247701F99307200D1560F /* Protocols */,
+				0FC2476D1F992FFF00D1560F /* Controller */,
+				0F5869951F98F29100DE2462 /* Speiseplan */,
+				0F5869961F98F29800DE2462 /* Mensainfo */,
+				0F5869941F98F28C00DE2462 /* Settings */,
+				0F937D0D1F97069600A65F9D /* Extensions */,
+				0FECC1101F964E9E00DE920B /* Model */,
+				0F58699F1F98F32900DE2462 /* Supporting Files */,
+				0F574F1E1F99427A00838701 /* MensaData.swift */,
+				0F2235B41F9D2AE80089515C /* UserProfileData.swift */,
+			);
+			path = "Mensaplan 2.0";
+			sourceTree = "<group>";
+		};
+		0FECC1101F964E9E00DE920B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC10E1F964E8D00DE920B /* PriceLevel.swift */,
+				0FECC1111F964EA900DE920B /* Price.swift */,
+				0FECC1151F9650B300DE920B /* Meal.swift */,
+				0FECC1171F96515000DE920B /* MealCategorie.swift */,
+				0FECC1191F9651E900DE920B /* MensaDay.swift */,
+				0F8DED9C1F9A69FF001F6507 /* Canteen.swift */,
+				0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */,
+				0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FECC0F81F964E3900DE920B /* Mensaplan 2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FECC10B1F964E3900DE920B /* Build configuration list for PBXNativeTarget "Mensaplan 2.0" */;
+			buildPhases = (
+				0FECC0F51F964E3900DE920B /* Sources */,
+				0FECC0F61F964E3900DE920B /* Frameworks */,
+				0FECC0F71F964E3900DE920B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mensaplan 2.0";
+			productName = "Mensaplan 2.0";
+			productReference = 0FECC0F91F964E3900DE920B /* Mensaplan 2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FECC0F11F964E3900DE920B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Marcel Hagmann";
+				TargetAttributes = {
+					0FECC0F81F964E3900DE920B = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0FECC0F41F964E3900DE920B /* Build configuration list for PBXProject "Mensaplan 2.0" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FECC0F01F964E3900DE920B;
+			productRefGroup = 0FECC0FA1F964E3900DE920B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FECC0F81F964E3900DE920B /* Mensaplan 2.0 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FECC0F71F964E3900DE920B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FECC1071F964E3900DE920B /* LaunchScreen.storyboard in Resources */,
+				0F5869A31F98F4AB00DE2462 /* Default-568h@2x.png in Resources */,
+				0FF3FFE21F9A4729006B6A51 /* Assets.xcassets in Resources */,
+				0FECC1021F964E3900DE920B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FECC0F51F964E3900DE920B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F937D0F1F9706A500A65F9D /* Extension+String.swift in Sources */,
+				0F5869A11F98F38800DE2462 /* Extension+UIView.swift in Sources */,
+				0FECC1181F96515000DE920B /* MealCategorie.swift in Sources */,
+				0FC2476C1F9919BB00D1560F /* MensaDownloadController.swift in Sources */,
+				0F4BAD131F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift in Sources */,
+				0F937D151F9767C700A65F9D /* SettingViewController.swift in Sources */,
+				0F937D131F97623F00A65F9D /* MensaInfoViewController.swift in Sources */,
+				0FC247741F9930A700D1560F /* NetworkSupervisor.swift in Sources */,
+				0F2548D11F99C01800CE8A26 /* MensaSelectionViewController.swift in Sources */,
+				0F8DED9F1F9A6A15001F6507 /* Extension+Date.swift in Sources */,
+				0F4BAD171F9D1EC000F4AFFA /* Extension+NotificationName.swift in Sources */,
+				0FECC10F1F964E8D00DE920B /* PriceLevel.swift in Sources */,
+				0FA3FE2E1F9A77A200A72A5F /* AllergiesSelectionTableViewController.swift in Sources */,
+				0F574F1F1F99427A00838701 /* MensaData.swift in Sources */,
+				0FECC1121F964EA900DE920B /* Price.swift in Sources */,
+				0F8DED9B1F9A69E9001F6507 /* SpeiseplanTableViewDataSource.swift in Sources */,
+				0F5913901F97F8C500B87C18 /* UIMealIconView.swift in Sources */,
+				0F2548D51F99D5D400CE8A26 /* DetailMealViewController.swift in Sources */,
+				0F6AFD3D1F9DAC5000ED2917 /* ImpressumViewController.swift in Sources */,
+				0F4BAD111F9D1E6000F4AFFA /* AllergiesTableViewSelectionDelegate.swift in Sources */,
+				0F6AFD431F9DAFB000ED2917 /* UISpeiseplanTableViewLegendCell.swift in Sources */,
+				0FA3FE291F9A750B00A72A5F /* MensaSelectionDelegate.swift in Sources */,
+				0F2235B51F9D2AE80089515C /* UserProfileData.swift in Sources */,
+				0F8DED9D1F9A69FF001F6507 /* Canteen.swift in Sources */,
+				0FC247721F99307E00D1560F /* MensaDownloadDelegate.swift in Sources */,
+				0FCBFAA01F9D078B003F9AC0 /* IngredientController.swift in Sources */,
+				0FECC11C1F9652A900DE920B /* MensaDayParser.swift in Sources */,
+				0FA3FE271F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift in Sources */,
+				0FC247781F9930D100D1560F /* FetchData.swift in Sources */,
+				0FECC11A1F9651E900DE920B /* MensaDay.swift in Sources */,
+				0FA3FE231F9A74AF00A72A5F /* Ingredient.swift in Sources */,
+				0FE2E6401F9C9EA200D14374 /* UIDownloadProgressView.swift in Sources */,
+				0F5869931F98F20F00DE2462 /* AppColor.swift in Sources */,
+				0F4BAD151F9D1E9F00F4AFFA /* HandicapController.swift in Sources */,
+				0FC2476F1F99306000D1560F /* Network.swift in Sources */,
+				0FC247761F9930B800D1560F /* FetchDataDelegate.swift in Sources */,
+				0FA3FE251F9A74BF00A72A5F /* AllergyTyp.swift in Sources */,
+				0FECC0FF1F964E3900DE920B /* SpeiseplanViewController.swift in Sources */,
+				0F59138E1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift in Sources */,
+				0FECC1141F964F0900DE920B /* Global.swift in Sources */,
+				0FE2E63E1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift in Sources */,
+				0FECC1161F9650B300DE920B /* Meal.swift in Sources */,
+				0F59138B1F97F6B500B87C18 /* UIPriceView.swift in Sources */,
+				0F2548D71F99DA0600CE8A26 /* UIStepSlider.swift in Sources */,
+				0F8DED991F9A69D8001F6507 /* SpeiseplanTableViewDelegate.swift in Sources */,
+				0FA3FE2B1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift in Sources */,
+				0F4BAD191F9D200400F4AFFA /* AllergiesSelectionDelegate.swift in Sources */,
+				0FECC0FD1F964E3900DE920B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0FECC1001F964E3900DE920B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FECC1011F964E3900DE920B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FECC1051F964E3900DE920B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FECC1061F964E3900DE920B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FECC1091F964E3900DE920B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FECC10A1F964E3900DE920B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FECC10C1F964E3900DE920B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5DB3XUQ936;
+				INFOPLIST_FILE = "Mensaplan 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mh.Mensaplan-2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FECC10D1F964E3900DE920B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5DB3XUQ936;
+				INFOPLIST_FILE = "Mensaplan 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mh.Mensaplan-2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FECC0F41F964E3900DE920B /* Build configuration list for PBXProject "Mensaplan 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FECC1091F964E3900DE920B /* Debug */,
+				0FECC10A1F964E3900DE920B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FECC10B1F964E3900DE920B /* Build configuration list for PBXNativeTarget "Mensaplan 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FECC10C1F964E3900DE920B /* Debug */,
+				0FECC10D1F964E3900DE920B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FECC0F11F964E3900DE920B /* Project object */;
+}
