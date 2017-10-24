@@ -20,13 +20,16 @@ class FetchData : NSObject, NetworkSupervisor {
     }
     
     func handleReceivedData(data: AnyObject) {
-        print("Downloaded Data")
         var mensaDay: MensaDay! // 🚨 gefähliches unwrapped optional
         if let d = data as? Data {
             if let htmlString = String(data: d, encoding: String.Encoding.utf8) {
                 let mensaHTMLParser = MensaDayParser()
                 mensaDay = mensaHTMLParser.parse(htmlString, for: date)
+                print("FetchData - handleReceivedData - Downloaded Data --> korrekt - \(date.germanDate)")
             }
+        } else {
+            print("FetchData - handleReceivedData - Downloaded Data --> ERRRRRRRROOOOOOOORRR - \(date.germanDate)")
+            mensaDay = MensaDay(date: date, mealCategories: nil)
         }
         delegate?.didFinishedDataProcessing(for: id, with: mensaDay)
     }

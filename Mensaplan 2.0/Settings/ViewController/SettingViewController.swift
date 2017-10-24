@@ -61,7 +61,11 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         if segue.identifier == storyboardSegueIDSettingsToMensaSelection {
             let destCtrl = segue.destination as! MensaSelectionTableViewController
             destCtrl.selectionDelegate = self
+        } else if segue.identifier == storyboardSegueIDSettingsToAllergiesSelection {
+            let destCtrl = segue.destination as! AllergiesSelectionTableViewController
+            destCtrl.selectionDelegate = self
         }
+        // TODO: ✅ ALergie selection
     }
     
     func loadAppVersion() {
@@ -126,7 +130,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     
     // MARK: - AllergiesSelectionDelegate
     func receiveAllergies(didSelect: Bool) {
-        changedDic["changedAllergies"] = true
+        changedDic["changedAllergies"] = didSelect
     }
     
     

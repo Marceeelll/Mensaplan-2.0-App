@@ -20,7 +20,7 @@ class SpeiseplanTableViewDelegate : NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
         if dSource.isDateCell(indexPath) {
-            return 40.0
+            return 45.0
         } else if dSource.isLegend(section: indexPath.section) {
             return 270.0
         } else {
@@ -31,7 +31,7 @@ class SpeiseplanTableViewDelegate : NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
-        if !dSource.dayContainsNoMealData() && !dSource.isLegend(section: indexPath.section) {
+        if !dSource.dayContainsNoMealData() && !dSource.isLegend(section: indexPath.section) && !dSource.isDateCell(indexPath) {
             selectedMeal = dSource.getMeal(at: indexPath)
             selectedMealCategorieName = dSource.getMealCategorieName(at: indexPath.section)
             viewCtrl.performSegue(withIdentifier: storyboardSegueIDSpeiseplanToMealDetail, sender: nil)

@@ -10,9 +10,11 @@ import UIKit
 
 class AllergiesTableViewSelectionDelegate: NSObject, UITableViewDelegate  {
     let handicapCtrl = HandicapController()
+    var didChangedAllergies: Bool = false
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        didChangedAllergies = true
         
         switch indexPath.section {
         case 0:

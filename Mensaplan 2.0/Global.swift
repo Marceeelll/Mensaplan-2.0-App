@@ -25,6 +25,7 @@ import UIKit
 // MARK - StoryboardSegueID`s
 let storyboardSegueIDSettingsToMensaSelection = "storyboardSegueIDSettingsToMensaSelection"
 let storyboardSegueIDSpeiseplanToMealDetail = "storyboardSegueIDSpeiseplanToMealDetail"
+let storyboardSegueIDSettingsToAllergiesSelection = "storyboardSegueIDSettingsToAllergiesSelection"
 
 // MARK: - Global Variables
 var appColor = AppColor(appearance: .dark)

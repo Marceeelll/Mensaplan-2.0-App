@@ -91,16 +91,44 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TB3-Vv-eZ1">
+                                                    <rect key="frame" x="325" y="0.0" width="50" height="39.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Q0J-Fu-c5W"/>
+                                                    </constraints>
+                                                    <state key="normal" title="---&gt;"/>
+                                                    <connections>
+                                                        <action selector="showNextDayAction:" destination="Dz6-EA-Tbg" eventType="touchUpInside" id="39n-7w-VKt"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXl-Sm-EHW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="39.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="d0L-9z-qOX"/>
+                                                    </constraints>
+                                                    <state key="normal" title="&lt;----"/>
+                                                    <connections>
+                                                        <action selector="showPreviousDayAction:" destination="Dz6-EA-Tbg" eventType="touchUpInside" id="BHN-H6-PzD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="TB3-Vv-eZ1" secondAttribute="bottom" id="32H-MC-muJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="TB3-Vv-eZ1" secondAttribute="trailing" id="PFr-0s-Qd5"/>
                                                 <constraint firstItem="uVD-JV-R2e" firstAttribute="leading" secondItem="m7s-cf-hbu" secondAttribute="leading" constant="8" id="Zdj-Ab-iFS"/>
                                                 <constraint firstItem="uVD-JV-R2e" firstAttribute="top" secondItem="m7s-cf-hbu" secondAttribute="top" constant="8" id="d8I-uG-BX7"/>
                                                 <constraint firstAttribute="trailing" secondItem="uVD-JV-R2e" secondAttribute="trailing" constant="8" id="fpv-Ib-5nu"/>
                                                 <constraint firstAttribute="bottom" secondItem="uVD-JV-R2e" secondAttribute="bottom" constant="8" id="i6Q-Q5-tpa"/>
+                                                <constraint firstItem="TB3-Vv-eZ1" firstAttribute="top" secondItem="m7s-cf-hbu" secondAttribute="top" id="ozx-Sn-qjj"/>
+                                                <constraint firstAttribute="bottom" secondItem="lXl-Sm-EHW" secondAttribute="bottom" id="puq-K7-AsI"/>
+                                                <constraint firstItem="lXl-Sm-EHW" firstAttribute="top" secondItem="m7s-cf-hbu" secondAttribute="top" id="xbH-dJ-nfr"/>
+                                                <constraint firstItem="lXl-Sm-EHW" firstAttribute="leading" secondItem="m7s-cf-hbu" secondAttribute="leading" id="xbV-hh-S9A"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="uVD-JV-R2e" id="Hb7-Kc-JXW"/>
+                                            <outlet property="nextMensaDayButton" destination="TB3-Vv-eZ1" id="eEb-YD-qCs"/>
+                                            <outlet property="previousMensaDayButton" destination="lXl-Sm-EHW" id="YCi-1W-n3Z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="legendCell" rowHeight="270" id="gXz-dw-IQY" customClass="UISpeiseplanTableViewLegendCell" customModule="Mensaplan_2_0" customModuleProvider="target">
@@ -550,23 +578,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Speiseplan" id="3F9-Nh-eZ3">
-                        <barButtonItem key="leftBarButtonItem" image="icon_refresh" id="6jb-cE-j2t">
+                        <barButtonItem key="rightBarButtonItem" image="icon_refresh" id="6jb-cE-j2t">
                             <connections>
                                 <action selector="startDownloadAction:" destination="BYZ-38-t0r" id="7qq-Ra-ki1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="Lj3-aQ-gMF">
-                            <stepper key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="m3R-NB-XAh">
-                                <rect key="frame" x="265" y="7.5" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="currentDayChangedAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="LC0-wv-jiT"/>
-                                </connections>
-                            </stepper>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="currentDayStepper" destination="m3R-NB-XAh" id="pqI-fu-8U4"/>
                         <outlet property="downloadProgressView" destination="NRy-S2-SP9" id="CMT-Od-Bnw"/>
                         <outlet property="downloadProgressViewHeightConstraint" destination="2KM-xU-UiD" id="tOJ-qe-D4p"/>
                         <outlet property="refreshButton" destination="6jb-cE-j2t" id="WVK-S2-nsB"/>
@@ -1000,7 +1018,7 @@ Fr             11:00 - 13:45 Uhr</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Anh-r6-sno" kind="show" id="nIk-kg-Kui"/>
+                                            <segue destination="Anh-r6-sno" kind="show" identifier="storyboardSegueIDSettingsToAllergiesSelection" id="nIk-kg-Kui"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

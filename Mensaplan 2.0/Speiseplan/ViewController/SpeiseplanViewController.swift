@@ -12,14 +12,12 @@ import UIKit
 class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var currentDayStepper: UIStepper!
     @IBOutlet weak var downloadProgressView: UIDownloadProgressView!
     @IBOutlet weak var downloadProgressViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     
     // MARK: - Instance Variable
-    var currentDay = 0
     let downloadCtrl = MensaDownloadController()
     
     var dataSource: SpeiseplanTableViewDataSource!
@@ -38,8 +36,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         
         downloadCtrl.delegate = self
         
-        let mensaDay = MensaData().getMensaDay(for: currentDay)
-        dataSource = SpeiseplanTableViewDataSource(mensaDay: mensaDay)
+        dataSource = SpeiseplanTableViewDataSource()//mensaDay: mensaDay)
         delegate = SpeiseplanTableViewDelegate(viewCtrl: self)
         tableView.dataSource = dataSource
         tableView.delegate = delegate
@@ -88,28 +85,20 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
                 changedMensa = mensa
             }
             
-            switch (changedOfflineDays, changedMensa, changedTarif, changedAllergies) {
-            case (true, _, _, _):
-                currentDay = 0
-                currentDayStepper.value = 0
-                fallthrough
-            case (_, true, _, _):
+            if changedOfflineDays || changedMensa {
                 MensaData().reset()
                 setUpUI()
-                showNextDay()
-            case (_, _, true, _): fallthrough
-            case (_, _, _, true): tableView.reloadData()
-            default: break
+                dataSource.resetCurrentIndexToZero()
             }
+            if changedOfflineDays || changedMensa || changedTarif || changedAllergies {
+                tableView.reloadData()
+            }
+            
         }
     }
     
     func setUpUI() {
         self.title = userProfile.canteen.mensaName
-        
-        currentDayStepper.maximumValue = Double(userProfile.numberOfDaysToDownload - 1)
-        currentDayStepper.setDecrementImage(UIImage(named: "icon_left"), for: .normal)
-        currentDayStepper.setIncrementImage(UIImage(named: "icon_right"), for: .normal)
         
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(startDownloadAction(_:)), for: .valueChanged)
@@ -117,13 +106,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         
         disableDownloadProgressView(false)
     }
-    
-    func showNextDay() {
-        let mensaDay = MensaData().getMensaDay(for: currentDay)
-        dataSource.data = mensaDay
-        tableView.reloadData()
-    }
-    
+
     
     // MARK: - Animations
     func showDownloadProgressView() {
@@ -160,23 +143,20 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         refreshButton.isEnabled = false
     }
     
-    @IBAction func currentDayChangedAction(_ sender: UIStepper) {
-        currentDay = Int(sender.value)
-        showNextDay()
-    }
-    
     
     // MARK: - MensaDownloadDelegate
     func downloadDone() {
         print("Download Done")
-        
-        let mensaDay = MensaData().getMensaDay(for: currentDay)
-        dataSource.data = mensaDay
+
+        dataSource.reloadCurrentMensaDay()
         downloadProgressView.stop()
         disableDownloadProgressView()
-        tableView.reloadData()
         refreshButton.isEnabled = true
         tableView.refreshControl?.endRefreshing()
+        let dateCellIndexPath = IndexPath(row: 0, section: 0)
+        let dateCell = tableView.cellForRow(at: dateCellIndexPath) as! UISpeiseplanTableViewDateCell
+        dateCell.displayStepperButtonsIfNeeded()
+        tableView.reloadData()
         MensaData().didUpdate()
     }
     

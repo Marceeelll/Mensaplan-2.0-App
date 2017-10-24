@@ -11,7 +11,9 @@ import UIKit
 class UISpeiseplanTableViewDateCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
-
+    @IBOutlet weak var previousMensaDayButton: UIButton!
+    @IBOutlet weak var nextMensaDayButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +25,31 @@ class UISpeiseplanTableViewDateCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func showNextDayAction(_ sender: UIButton) {
+        if let tableView = self.superview as? UITableView {
+            let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
+            dSource.nextMensaDay()
+            displayStepperButtonsIfNeeded()
+            tableView.reloadData()
+        }
+    }
     
-
+    @IBAction func showPreviousDayAction(_ sender: UIButton) {
+        if let tableView = self.superview as? UITableView {
+            let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
+            dSource.previousMensaDay()
+            displayStepperButtonsIfNeeded()
+            tableView.reloadData()
+        }
+    }
+    
+    func displayStepperButtonsIfNeeded() {
+        if let tableView = self.superview as? UITableView {
+            let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
+            previousMensaDayButton.isEnabled = dSource.hasPreviousMensaDay()
+            nextMensaDayButton.isEnabled = dSource.hasNextMensaDay()
+        }
+    }
+    
+    
 }

@@ -14,8 +14,10 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
     
     let ingredientCtrl = IngredientController()
     
-    init(mensaDay: MensaDay) {
-        self.data = mensaDay
+//    init(mensaDay: MensaDay) {
+    override init() {
+//        self.data = mensaDay
+        data = mensaData.getMensaDay(for: currentIndex)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -121,4 +123,49 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
         let sectionConsiderDate = section - 1 // Weil Date an erster Stelle eingeschoben ist
         return sectionConsiderDate
     }
+    
+    func reloadCurrentMensaDay() {
+        data = mensaData.getMensaDay(for: currentIndex)
+    }
+    
+    
+    
+    
+    let mensaData = MensaData()
+    private var currentIndex: Int = 0
+    
+    func resetCurrentIndexToZero() {
+        currentIndex = 0
+        data = mensaData.getMensaDay(for: currentIndex)
+    }
+    
+    func hasNextMensaDay() -> Bool {
+        print("currentIndex: \(currentIndex) - \(mensaData.numberOfMensaDays)")
+        return currentIndex < mensaData.numberOfMensaDays - 1
+    }
+    
+    func hasPreviousMensaDay() -> Bool {
+        print("currentIndex: \(currentIndex)")
+        return currentIndex > 0
+    }
+    
+    func nextMensaDay() {
+        if hasNextMensaDay() {
+            currentIndex += 1
+            data = mensaData.getMensaDay(for: currentIndex)
+            print("currentIndex: \(currentIndex)")
+        }
+    }
+    
+    func previousMensaDay() {
+        if hasPreviousMensaDay() {
+            currentIndex -= 1
+            data = mensaData.getMensaDay(for: currentIndex)
+            print("currentIndex: \(currentIndex)")
+        }
+    }
+    
 }
+
+
+

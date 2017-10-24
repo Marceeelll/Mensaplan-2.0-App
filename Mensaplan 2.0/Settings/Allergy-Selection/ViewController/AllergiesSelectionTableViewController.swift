@@ -16,6 +16,8 @@ class AllergiesSelectionTableViewController: UIViewController {
     
     var delegate: AllergiesTableViewSelectionDelegate!
     var dataSource: AllergiesTableViewSelectionDataSource!
+    
+    var selectionDelegate: AllergiesSelectionDelegate!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,7 +30,12 @@ class AllergiesSelectionTableViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = dataSource
         tableView.delegate = delegate
-        view.addSubview(tableView) // 🚨 BUG: Im Landscape Modus ----> Constraints setzen
+        view.addSubview(tableView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        selectionDelegate.receiveAllergies(didSelect: delegate.didChangedAllergies)
     }
 
     override func didReceiveMemoryWarning() {

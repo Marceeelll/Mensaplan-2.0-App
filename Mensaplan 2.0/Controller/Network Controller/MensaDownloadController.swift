@@ -15,7 +15,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     
     let urlBuilder = MensaURLBuilder()
     
-//    var loaders: [FetchData] = []
+    var loaders: [FetchData] = []
     var workItems: [DispatchWorkItem] = []
     var downloadGroup: DispatchGroup
     
@@ -30,12 +30,6 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
         downloadGroup = DispatchGroup()
     }
     
-    deinit {
-        // ❓ ich versteh den Sinn dieser Zeile nicht ?
-        // weil wenn diese nicht erfüllt ist stürzt das Programm ab
-        // WWDC 2016 - Session 720 - Seite 167
-        precondition(invalidated)
-    }
     
     func didFinishedDataProcessing(for id: Int, with data: MensaDay) {
         tmpMensaData.append(data)
@@ -63,9 +57,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
                 loader.id = dayInFuture
                 loader.date = date
                 
-//                objc_sync_enter(self.loaders)
-//                self.loaders.append(loader)
-//                objc_sync_exit(self.loaders)
+                self.loaders.append(loader)
                 
                 let url = self.urlBuilder.url(for: date)
                 
@@ -95,9 +87,9 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     func invalidate() {
         dispatchPrecondition(condition: .onQueue(.main))
         invalidated = true
-//        cancelAllNetworkConnections()
+        cancelAllNetworkConnections()
         cancelAllJobs()
-        print("\tinvalidate()")
+        print("--invalidate()")
     }
     
     private func cancelAllJobs() {
@@ -106,18 +98,18 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
         }
     }
     
-//    private func cancelAllNetworkConnections() {
-//        for loader in loaders {
-//            print("---> Cancel")
-//            loader.cancel()
-//        }
-//    }
+    private func cancelAllNetworkConnections() {
+        for loader in loaders {
+            loader.cancel()
+        }
+    }
     
     private func resetAll() {
         invalidated = false
         downloadGroup = DispatchGroup()
         workItems = []
         tmpMensaData = []
+        loaders = []
         numberOfAlreadyDownloaded = 0
     }
     
