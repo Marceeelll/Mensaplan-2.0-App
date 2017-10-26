@@ -22,6 +22,8 @@ class UISpeiseplanTableViewMealCell: UITableViewCell {
         
         dangerousIngredientsView.makeViewRound()
         dangerousIngredientsView.backgroundColor = appColor.warningOfIngredients
+        priceView.backgroundColor = appColor.priceView
+        mealTitleLabel.textColor = appColor.text
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

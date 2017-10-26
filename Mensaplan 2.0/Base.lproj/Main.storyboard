@@ -97,7 +97,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Q0J-Fu-c5W"/>
                                                     </constraints>
-                                                    <state key="normal" title="---&gt;"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="→"/>
                                                     <connections>
                                                         <action selector="showNextDayAction:" destination="Dz6-EA-Tbg" eventType="touchUpInside" id="39n-7w-VKt"/>
                                                     </connections>
@@ -107,7 +108,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="d0L-9z-qOX"/>
                                                     </constraints>
-                                                    <state key="normal" title="&lt;----"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="←"/>
                                                     <connections>
                                                         <action selector="showPreviousDayAction:" destination="Dz6-EA-Tbg" eventType="touchUpInside" id="BHN-H6-PzD"/>
                                                     </connections>
@@ -616,7 +618,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zwB-8v-HZ5">
                                 <rect key="frame" x="60" y="331" width="307" height="287"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">• Salat
 • Tomaten
 • Mais
@@ -662,6 +664,7 @@
                         <viewLayoutGuide key="safeArea" id="8fS-Be-Zuu"/>
                     </view>
                     <connections>
+                        <outlet property="ingredientsHeader" destination="Y6C-NB-iaG" id="hzl-rs-kF3"/>
                         <outlet property="ingredientsTextView" destination="zwB-8v-HZ5" id="h47-Vm-efN"/>
                         <outlet property="mealIconView" destination="deB-ei-Usy" id="hhW-mm-V39"/>
                         <outlet property="titleLabel" destination="YG1-BU-N2S" id="bh7-Bh-bSt"/>
@@ -682,14 +685,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_campus" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-Zu-RSB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Kn-MIR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Kn-MIR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <string key="text">Mensa - Campus Hof Wirthstraße 51
-95028 Hof
-
-Öffnungszeiten:
-Mo - Di   11:00 - 14:15 Uhr
-Fr             11:00 - 13:45 Uhr</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -709,6 +706,9 @@ Fr             11:00 - 13:45 Uhr</string>
                         <viewLayoutGuide key="safeArea" id="fYM-uB-jJy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mensa-Informationen" id="dsg-2H-UTa"/>
+                    <connections>
+                        <outlet property="mensaInfoLabel" destination="st5-Kn-MIR" id="vEI-8V-g8d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vb-RG-DNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -738,7 +738,7 @@ Fr             11:00 - 13:45 Uhr</string>
         <scene sceneID="COR-U9-bar">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eh4-dx-YQL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speiseplan" image="tab_icon_speiseplan" id="FCd-Ll-KdN"/>
+                    <tabBarItem key="tabBarItem" title="Speiseplan" image="tab_icon_speiseplan" selectedImage="tab_icon_speiseplan_filled" id="FCd-Ll-KdN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yZa-bD-Q91">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -849,8 +849,11 @@ Fr             11:00 - 13:45 Uhr</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-ph-oSN">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-ph-oSN">
                                                     <rect key="frame" x="163" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changedDesignSwitchAction:" destination="WjM-bZ-Gba" eventType="valueChanged" id="bCV-zJ-bnn"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-Dy-n60">
                                                     <rect key="frame" x="228" y="11" width="131" height="21"/>
@@ -1209,7 +1212,7 @@ Fr             11:00 - 13:45 Uhr</string>
         <scene sceneID="cXB-In-7w4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fLh-rG-2Mw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tab_icon_settings" id="FYt-iq-PcE"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="tab_icon_settings" selectedImage="tab_icon_settings_filled" id="FYt-iq-PcE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BDw-sn-3ZV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1228,7 +1231,7 @@ Fr             11:00 - 13:45 Uhr</string>
         <scene sceneID="yz8-WE-69G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FzF-SX-Amo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mensainfo" image="tab_icon_mensa_info" id="Qpg-Bf-Ybt"/>
+                    <tabBarItem key="tabBarItem" title="Mensainfo" image="tab_icon_mensa_info" selectedImage="tab_icon_mensa_info_filled" id="Qpg-Bf-Ybt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h57-Oz-3dG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1250,7 +1253,10 @@ Fr             11:00 - 13:45 Uhr</string>
         <image name="icon_cancel" width="24" height="24"/>
         <image name="icon_refresh" width="26" height="26"/>
         <image name="tab_icon_mensa_info" width="30" height="30"/>
+        <image name="tab_icon_mensa_info_filled" width="30" height="30"/>
         <image name="tab_icon_settings" width="32" height="32"/>
+        <image name="tab_icon_settings_filled" width="30" height="30"/>
         <image name="tab_icon_speiseplan" width="30" height="30"/>
+        <image name="tab_icon_speiseplan_filled" width="30" height="30"/>
     </resources>
 </document>

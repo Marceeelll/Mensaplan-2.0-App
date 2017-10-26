@@ -10,10 +10,23 @@
 import UIKit
 
 class MensaInfoViewController: UIViewController {
+    @IBOutlet weak var mensaInfoLabel: UILabel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpDesign(for: self.navigationController, for: self.tabBarController)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mensaInfoLabel.text = getMensaInfoText()
+    }
+    
+    func getMensaInfoText() -> String {
+        let adress = userProfile.canteen.mensaAdress
+        let openingTimes = userProfile.canteen.openingTimes
+        return "\(adress)\n\n\(openingTimes)"
     }
     
 }

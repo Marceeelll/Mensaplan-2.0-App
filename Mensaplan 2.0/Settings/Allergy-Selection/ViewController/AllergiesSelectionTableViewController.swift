@@ -30,6 +30,7 @@ class AllergiesSelectionTableViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = dataSource
         tableView.delegate = delegate
+        tableView.tintColor = appColor.tableViewCellTintColor
         view.addSubview(tableView)
     }
     

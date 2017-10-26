@@ -21,6 +21,8 @@ class MensaSelectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.tintColor = appColor.tableViewCellTintColor
+        
         delegate = MensaSelectionTableViewDelegate(selectionDelegate: selectionDelegate)
         dataSource = MensaSelectionTableViewDataSource()
         

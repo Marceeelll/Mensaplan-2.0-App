@@ -34,6 +34,7 @@ class UISpeiseplanTableViewLegendCell: UITableViewCell {
             mealIcon.display(icons: [mealType])
             mealLabel.adjustsFontSizeToFitWidth = true
             mealLabel.text = mealType.name
+            mealLabel.textColor = appColor.text
         }
     }
 

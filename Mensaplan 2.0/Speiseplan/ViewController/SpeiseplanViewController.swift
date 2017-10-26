@@ -46,6 +46,8 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         }
         
         setUpUI()
+        setUpDesign(for: self.navigationController, for: self.tabBarController)
+        tableView.backgroundColor = appColor.background
         
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(changedSettings(_:)), name: Notification.Name.changedSettings, object: nil)
@@ -101,6 +103,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         self.title = userProfile.canteen.mensaName
         
         let refresh = UIRefreshControl()
+        refresh.tintColor = appColor.text
         refresh.addTarget(self, action: #selector(startDownloadAction(_:)), for: .valueChanged)
         tableView.refreshControl = refresh
         

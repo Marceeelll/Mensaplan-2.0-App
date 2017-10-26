@@ -38,4 +38,11 @@ class SpeiseplanTableViewDelegate : NSObject, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            header.contentView.backgroundColor = appColor.tableViewHeader
+            header.textLabel?.textColor = appColor.tableViewHeaderText
+        }
+    }
+    
 }

@@ -45,5 +45,23 @@ struct MensaURLBuilder {
 }
 
 
+func setUpDesign(for navigationController: UINavigationController?, for tabBarController: UITabBarController?) {
+    navigationController?.navigationBar.isTranslucent = false
+    navigationController?.navigationBar.barTintColor = appColor.navigationBarBackground
+    navigationController?.navigationBar.tintColor = appColor.navigationBarText
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:appColor.navigationBarText]
+    
+    tabBarController?.tabBar.isTranslucent = false
+    tabBarController?.tabBar.barTintColor = appColor.navigationBarBackground
+    tabBarController?.tabBar.tintColor = appColor.tabBarImageColor
+    
+    if let tabBarItems = tabBarController?.tabBar.items {
+        for tabBarItem in tabBarItems {
+            tabBarItem.setTitleTextAttributes([.foregroundColor:appColor.tabBarText], for: .normal)
+        }
+    }
+}
+
+
 
 

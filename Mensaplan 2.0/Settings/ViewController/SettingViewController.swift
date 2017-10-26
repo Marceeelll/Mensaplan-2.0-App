@@ -34,6 +34,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         
         loadAppVersion()
         setUpUI()
+        setUpDesign()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -55,6 +56,13 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
             let priceLevel = PriceLevel.allPriceLevels[index]
             tariffSegmentedControll.setTitle(priceLevel.priceLevelName, forSegmentAt: index)
         }
+    }
+    
+    func setUpDesign() {
+        Mensaplan_2_0.setUpDesign(for: self.navigationController, for: self.tabBarController)
+        tariffSegmentedControll.tintColor = appColor.controllItem
+        downloadDaysSlider.minimumTrackTintColor = appColor.controllItem
+        designAppearanceSwitch.onTintColor = appColor.controllItem
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -115,6 +123,13 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         userProfile.set(numberOfDaysToDownload: numberOfDaysToDownload)
         numberOfDaysToDownloadLabel.text = "Tage: \(numberOfDaysToDownload)"
         changedDic["changedOfflineDays"] = true
+    }
+    
+    @IBAction func changedDesignSwitchAction(_ sender: UISwitch) {
+        switch appColor.appearance {
+        case .dark: appColor.appearance = .light
+        case .light: appColor.appearance = .dark
+        }
     }
     
     

@@ -12,6 +12,7 @@ import UIKit
 class DetailMealViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ingredientsHeader: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var mealIconView: UIMealIconView!
     
@@ -27,6 +28,7 @@ class DetailMealViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        setUpDesign()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +43,13 @@ class DetailMealViewController: UIViewController {
         mealIconView.display(icons: receivedMeal.mealIconTypes)
         titleLabel.text = receivedMeal.name
         ingredientsTextView.attributedText = ingredientCtrl.highligtDangerousIngredients(in: receivedMeal)
+    }
+    
+    func setUpDesign() {
+        Mensaplan_2_0.setUpDesign(for: self.navigationController, for: self.tabBarController)
+        view.backgroundColor = appColor.background
+        titleLabel.textColor = appColor.text
+        ingredientsHeader.textColor = appColor.text
     }
     
 }
