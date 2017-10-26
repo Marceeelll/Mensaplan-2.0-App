@@ -12,7 +12,7 @@ import Foundation
 /**
  Verwaltet den Tag und die dazugehören `MealCategories` die es an dem Tag gibt.
  */
-struct MensaDay {
+struct MensaDay: Codable {
     var date: Date
     var mealCategories: [MealCategorie]?
 }

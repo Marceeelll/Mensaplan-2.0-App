@@ -9,7 +9,7 @@
 
 import Foundation
 
-enum PriceLevel {
+enum PriceLevel: Int, Codable {
     case student
     case servant
     case guest

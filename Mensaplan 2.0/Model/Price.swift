@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Price {
+struct Price: Codable {
     var student: Double
     var servant: Double
     var guest: Double

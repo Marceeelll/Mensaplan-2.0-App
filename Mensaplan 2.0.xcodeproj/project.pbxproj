@@ -33,7 +33,7 @@
 		0F937D131F97623F00A65F9D /* MensaInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F937D121F97623F00A65F9D /* MensaInfoViewController.swift */; };
 		0F937D151F9767C700A65F9D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F937D141F9767C700A65F9D /* SettingViewController.swift */; };
 		0FA3FE231F9A74AF00A72A5F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */; };
-		0FA3FE251F9A74BF00A72A5F /* AllergyTyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */; };
+		0FA3FE251F9A74BF00A72A5F /* Handicap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE241F9A74BF00A72A5F /* Handicap.swift */; };
 		0FA3FE271F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE261F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift */; };
 		0FA3FE291F9A750B00A72A5F /* MensaSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE281F9A750B00A72A5F /* MensaSelectionDelegate.swift */; };
 		0FA3FE2B1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE2A1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift */; };
@@ -47,6 +47,8 @@
 		0FCBFAA01F9D078B003F9AC0 /* IngredientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */; };
 		0FE2E63E1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2E63D1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift */; };
 		0FE2E6401F9C9EA200D14374 /* UIDownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2E63F1F9C9EA200D14374 /* UIDownloadProgressView.swift */; };
+		0FEA06391FA1F6CC0041A497 /* MensaFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA06381FA1F6CC0041A497 /* MensaFileManager.swift */; };
+		0FEA063B1FA1F6DC0041A497 /* MensaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA063A1FA1F6DC0041A497 /* MensaStore.swift */; };
 		0FECC0FD1F964E3900DE920B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC0FC1F964E3900DE920B /* AppDelegate.swift */; };
 		0FECC0FF1F964E3900DE920B /* SpeiseplanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECC0FE1F964E3900DE920B /* SpeiseplanViewController.swift */; };
 		0FECC1021F964E3900DE920B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FECC1001F964E3900DE920B /* Main.storyboard */; };
@@ -88,7 +90,7 @@
 		0F937D121F97623F00A65F9D /* MensaInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaInfoViewController.swift; sourceTree = "<group>"; };
 		0F937D141F9767C700A65F9D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTyp.swift; sourceTree = "<group>"; };
+		0FA3FE241F9A74BF00A72A5F /* Handicap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handicap.swift; sourceTree = "<group>"; };
 		0FA3FE261F9A74F900A72A5F /* MensaSelectionTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionTableViewDelegate.swift; sourceTree = "<group>"; };
 		0FA3FE281F9A750B00A72A5F /* MensaSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionDelegate.swift; sourceTree = "<group>"; };
 		0FA3FE2A1F9A751800A72A5F /* MensaSelectionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaSelectionTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientController.swift; sourceTree = "<group>"; };
 		0FE2E63D1F9C912B00D14374 /* UISpeiseplanTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpeiseplanTableViewDateCell.swift; sourceTree = "<group>"; };
 		0FE2E63F1F9C9EA200D14374 /* UIDownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDownloadProgressView.swift; sourceTree = "<group>"; };
+		0FEA06381FA1F6CC0041A497 /* MensaFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaFileManager.swift; sourceTree = "<group>"; };
+		0FEA063A1FA1F6DC0041A497 /* MensaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaStore.swift; sourceTree = "<group>"; };
 		0FECC0F91F964E3900DE920B /* Mensaplan 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mensaplan 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FECC0FC1F964E3900DE920B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FECC0FE1F964E3900DE920B /* SpeiseplanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeiseplanViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 				0F8DED961F9A6874001F6507 /* HTMLParser */,
 				0F4BAD141F9D1E9F00F4AFFA /* HandicapController.swift */,
 				0FCBFA9F1F9D078B003F9AC0 /* IngredientController.swift */,
+				0FEA06381FA1F6CC0041A497 /* MensaFileManager.swift */,
+				0FEA063A1FA1F6DC0041A497 /* MensaStore.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +339,17 @@
 				0F4BAD181F9D200400F4AFFA /* AllergiesSelectionDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0FDBE5901FA1EB4A00ADB292 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0FECC10E1F964E8D00DE920B /* PriceLevel.swift */,
+				0FA3FE241F9A74BF00A72A5F /* Handicap.swift */,
+				0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */,
+				0F8DED9C1F9A69FF001F6507 /* Canteen.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		0FECC0F01F964E3900DE920B = {
@@ -377,14 +394,11 @@
 		0FECC1101F964E9E00DE920B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0FECC10E1F964E8D00DE920B /* PriceLevel.swift */,
+				0FDBE5901FA1EB4A00ADB292 /* Enums */,
 				0FECC1111F964EA900DE920B /* Price.swift */,
 				0FECC1151F9650B300DE920B /* Meal.swift */,
 				0FECC1171F96515000DE920B /* MealCategorie.swift */,
 				0FECC1191F9651E900DE920B /* MensaDay.swift */,
-				0F8DED9C1F9A69FF001F6507 /* Canteen.swift */,
-				0FA3FE221F9A74AF00A72A5F /* Ingredient.swift */,
-				0FA3FE241F9A74BF00A72A5F /* AllergyTyp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +482,7 @@
 				0FC2476C1F9919BB00D1560F /* MensaDownloadController.swift in Sources */,
 				0F4BAD131F9D1E6D00F4AFFA /* AllergiesTableViewSelectionDataSource.swift in Sources */,
 				0F937D151F9767C700A65F9D /* SettingViewController.swift in Sources */,
+				0FEA06391FA1F6CC0041A497 /* MensaFileManager.swift in Sources */,
 				0F937D131F97623F00A65F9D /* MensaInfoViewController.swift in Sources */,
 				0FC247741F9930A700D1560F /* NetworkSupervisor.swift in Sources */,
 				0F2548D11F99C01800CE8A26 /* MensaSelectionViewController.swift in Sources */,
@@ -498,7 +513,8 @@
 				0F4BAD151F9D1E9F00F4AFFA /* HandicapController.swift in Sources */,
 				0FC2476F1F99306000D1560F /* Network.swift in Sources */,
 				0FC247761F9930B800D1560F /* FetchDataDelegate.swift in Sources */,
-				0FA3FE251F9A74BF00A72A5F /* AllergyTyp.swift in Sources */,
+				0FA3FE251F9A74BF00A72A5F /* Handicap.swift in Sources */,
+				0FEA063B1FA1F6DC0041A497 /* MensaStore.swift in Sources */,
 				0FECC0FF1F964E3900DE920B /* SpeiseplanViewController.swift in Sources */,
 				0F59138E1F97F82D00B87C18 /* UISpeiseplanTableViewCell.swift in Sources */,
 				0FECC1141F964F0900DE920B /* Global.swift in Sources */,

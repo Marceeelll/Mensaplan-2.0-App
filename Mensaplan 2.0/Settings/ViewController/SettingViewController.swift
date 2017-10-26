@@ -51,6 +51,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     func setUpUI() {
         appNameVersionLabel.text = "\(appName) \(version)"
         downloadDaysSlider.value = Float(userProfile.numberOfDaysToDownload)
+        selectedCanteenLabel.text = "Mensa \(userProfile.canteen.mensaName)"
         
         for index in 0..<PriceLevel.allPriceLevels.count {
             let priceLevel = PriceLevel.allPriceLevels[index]

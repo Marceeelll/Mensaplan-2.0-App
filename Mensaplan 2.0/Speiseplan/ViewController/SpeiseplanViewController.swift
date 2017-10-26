@@ -36,7 +36,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         
         downloadCtrl.delegate = self
         
-        dataSource = SpeiseplanTableViewDataSource()//mensaDay: mensaDay)
+        dataSource = SpeiseplanTableViewDataSource()
         delegate = SpeiseplanTableViewDelegate(viewCtrl: self)
         tableView.dataSource = dataSource
         tableView.delegate = delegate
@@ -168,5 +168,32 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
             self.downloadProgressView.setProgress(alreadyDownloaded, of: allDownloads)
         }
     }
+    
+    @IBAction func testAction(_ sender: UIBarButtonItem) {
+        print("Test Action")
+        print("Test: \(userProfile)")
+//        let store = MensaStore()
+//        let days = MensaData().mensaDays
+////        store.save(days: days)
+//
+//        do {
+//            let encoder = JSONEncoder()
+//            let userData = UserProfileDataSingleton.sharedInstance
+//            let encodedData = try encoder.encode(userData)
+//            let jsonSTring = String(data: encodedData, encoding: String.Encoding.utf8)
+//        } catch {
+//            print(error)
+//        }
+        
+    }
 }
+
+
+
+
+
+
+
+
+
 

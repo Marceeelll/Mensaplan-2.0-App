@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Canteen {
+enum Canteen: Int, Codable {
     case Amberg
     case CoburgHauptmensa
     case CoburgCampusDesign

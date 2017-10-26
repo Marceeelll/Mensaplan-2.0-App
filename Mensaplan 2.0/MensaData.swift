@@ -11,7 +11,7 @@ import Foundation
 class MensaData {
     private var model = MensaDataSingleton.sharedInstance
     
-    private var mensaDays: [MensaDay] {
+    var mensaDays: [MensaDay] {
         return model.mensaDays
     }
     
@@ -50,6 +50,16 @@ class MensaData {
     
     func reset() {
         model.mensaDays = []
+    }
+    
+    func deleteOldData() {
+        let today = Date()
+        for index in (0..<mensaDays.count).reversed() {
+            let mensaDay = mensaDays[index]
+            if mensaDay.date < today {
+                model.mensaDays.remove(at: index)
+            }
+        }
     }
     
     

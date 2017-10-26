@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Meal {
+struct Meal: Codable {
     var name: String
     /**
      Aus den Attributen (vegan, hausgemacht, wild, ...) wird das Icon generiert.

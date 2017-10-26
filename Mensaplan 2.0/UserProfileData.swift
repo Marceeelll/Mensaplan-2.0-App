@@ -9,7 +9,7 @@
 import Foundation
 
 class UserProfileData {
-    private var model = UserProfileDataSingleton.sharedInstance
+    var model = UserProfileDataSingleton.sharedInstance
     
     /**
      Beinhaltet die kurz
@@ -98,11 +98,15 @@ class UserProfileData {
 }
 
 
-fileprivate class UserProfileDataSingleton {
+struct UserProfileDataSingleton: Codable {
     static var sharedInstance = UserProfileDataSingleton()
     private init() {}
     
-    var allergicTypes: [Handicap] = []
+    var allergicTypes: [Handicap] = [] {
+        didSet {
+            print("allergicTypes: \(allergicTypes)")
+        }
+    }
     var lifestyle: [Handicap] = []
     var dangerousIngredients: [Ingredient] = []
     var priceLevel: PriceLevel = .student

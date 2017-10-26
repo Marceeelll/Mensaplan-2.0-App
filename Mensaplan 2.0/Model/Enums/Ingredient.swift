@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Ingredient {
+enum Ingredient: Int, Codable {
     case i1
     case i2
     case i3

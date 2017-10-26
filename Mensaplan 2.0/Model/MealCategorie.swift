@@ -12,7 +12,7 @@ import Foundation
 /**
  Eine `MealCategorie` ist eine Unterteilung der Gerichte in *Hauptspeise, Nachspeise, Beilage, etc.*
  */
-struct MealCategorie {
+struct MealCategorie: Codable {
     var name: String
     var meals: [Meal]
     

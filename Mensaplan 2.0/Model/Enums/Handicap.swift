@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Handicap {
+enum Handicap: Int, Codable {
     case normal
     case nuts
     case gluten

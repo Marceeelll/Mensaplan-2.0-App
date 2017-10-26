@@ -57,7 +57,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
                 loader.id = dayInFuture
                 loader.date = date
                 
-                self.loaders.append(loader)
+                self.loaders.append(loader) // 🚨 ???????
                 
                 let url = self.urlBuilder.url(for: date)
                 
