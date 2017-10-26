@@ -53,7 +53,8 @@ class MensaData {
     }
     
     func deleteOldData() {
-        let today = Date()
+        let minuten30:TimeInterval = -60*30
+        let today = Date(timeIntervalSinceNow: minuten30)
         for index in (0..<mensaDays.count).reversed() {
             let mensaDay = mensaDays[index]
             if mensaDay.date < today {

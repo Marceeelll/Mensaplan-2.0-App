@@ -581,11 +581,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Speiseplan" id="3F9-Nh-eZ3">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="W1E-Qf-ft2">
-                            <connections>
-                                <action selector="testAction:" destination="BYZ-38-t0r" id="Ehb-tb-7fy"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon_refresh" id="6jb-cE-j2t">
                             <connections>
                                 <action selector="startDownloadAction:" destination="BYZ-38-t0r" id="7qq-Ra-ki1"/>
