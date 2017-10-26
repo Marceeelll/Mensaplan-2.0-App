@@ -9,14 +9,16 @@
 import UIKit
 
 class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
-    var data: MensaDay
+    var data: MensaDay {
+        didSet {
+            expandedPriceViewCells = []
+        }
+    }
     let numberOfExtraCells: Int = 2 // Datum, Legende
-    
+    private var expandedPriceViewCells: [IndexPath] = []
     let ingredientCtrl = IngredientController()
     
-//    init(mensaDay: MensaDay) {
     override init() {
-//        self.data = mensaDay
         data = mensaData.getMensaDay(for: currentIndex)
     }
     
@@ -67,6 +69,11 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
             cell.dangerousIngredientsView.isHidden = true
         } else {
             let meal = getMeal(at: indexPath)
+            if expandedPriceViewCells.contains(indexPath) {
+                cell.showBigPriceView(false)
+            } else {
+                cell.showNormalPriceView(false)
+            }
             cell.display(meal)
             cell.dangerousIngredientsView.isHidden = !ingredientCtrl.containsDangerousIngredients(in: meal)
         }
@@ -130,7 +137,7 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
     
     
     
-    
+    // MARK: - Switch between different days
     let mensaData = MensaData()
     private var currentIndex: Int = 0
     
@@ -165,7 +172,26 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
         }
     }
     
+    
+    // MARK: - Expandable Price View Handling
+    func appendExpandabledPriceView(at indexPath: IndexPath) {
+        expandedPriceViewCells.append(indexPath)
+    }
+    
+    func removeExpandablePriceView(at indexPath: IndexPath) {
+        for index in 0..<expandedPriceViewCells.count {
+            if indexPath == expandedPriceViewCells[index] {
+                expandedPriceViewCells.remove(at: index)
+                break
+            }
+        }
+    }
 }
+
+
+
+
+
 
 
 

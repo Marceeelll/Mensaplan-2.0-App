@@ -48,7 +48,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
             }
             
             let workItem = DispatchWorkItem(block: {
-                let oneDay: TimeInterval = 60*60*24
+                let oneDay: TimeInterval = 60*60*24 // 🚨
                 let futureTimeInterval = oneDay * TimeInterval(dayInFuture)
                 let date = Date(timeIntervalSinceNow: futureTimeInterval)
                 

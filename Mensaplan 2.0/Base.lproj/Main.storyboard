@@ -51,21 +51,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtc-Lp-vMw" customClass="UIPriceView" customModule="Mensaplan_2_0" customModuleProvider="target">
-                                                    <rect key="frame" x="225" y="44.5" width="150" height="25"/>
+                                                    <rect key="frame" x="222" y="44.5" width="153" height="25"/>
                                                     <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="mmd-hD-Qlu"/>
-                                                        <constraint firstAttribute="height" constant="25" id="vlk-4f-atH"/>
+                                                        <constraint firstAttribute="height" constant="25" id="ITN-0C-X3T"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="vtc-Lp-vMw" secondAttribute="trailing" id="4gZ-WV-vsg"/>
-                                                <constraint firstAttribute="bottom" secondItem="vtc-Lp-vMw" secondAttribute="bottom" id="5Rp-KM-Cdh"/>
+                                                <constraint firstAttribute="trailing" secondItem="vtc-Lp-vMw" secondAttribute="trailing" id="5g9-mR-kfK"/>
                                                 <constraint firstItem="y8C-R0-pmM" firstAttribute="leading" secondItem="HRj-z4-D3q" secondAttribute="leading" constant="8" id="CCI-rm-1Sl"/>
                                                 <constraint firstAttribute="bottom" secondItem="VCV-Zu-K9W" secondAttribute="bottom" constant="8" id="Cbz-0d-vNk"/>
                                                 <constraint firstItem="VCV-Zu-K9W" firstAttribute="top" secondItem="HRj-z4-D3q" secondAttribute="top" constant="8" id="DJR-Lk-4p0"/>
+                                                <constraint firstItem="vtc-Lp-vMw" firstAttribute="leading" secondItem="y8C-R0-pmM" secondAttribute="trailing" constant="160" id="PsF-Sg-vZF"/>
                                                 <constraint firstAttribute="trailing" secondItem="VCV-Zu-K9W" secondAttribute="trailing" constant="8" id="Y3Q-Q9-6qh"/>
+                                                <constraint firstAttribute="bottom" secondItem="vtc-Lp-vMw" secondAttribute="bottom" id="cA0-W5-feL"/>
                                                 <constraint firstItem="VCV-Zu-K9W" firstAttribute="leading" secondItem="y8C-R0-pmM" secondAttribute="trailing" constant="8" id="cBw-d5-ceG"/>
                                                 <constraint firstItem="y8C-R0-pmM" firstAttribute="top" secondItem="HRj-z4-D3q" secondAttribute="top" constant="8" id="hIM-VN-LF5"/>
                                                 <constraint firstAttribute="bottom" secondItem="y8C-R0-pmM" secondAttribute="bottom" constant="7.5" id="pJZ-v3-Fja"/>
@@ -76,6 +76,7 @@
                                             <outlet property="mealIconView" destination="y8C-R0-pmM" id="pe3-ni-8Ql"/>
                                             <outlet property="mealTitleLabel" destination="VCV-Zu-K9W" id="8ZO-3u-kco"/>
                                             <outlet property="priceView" destination="vtc-Lp-vMw" id="U8Q-Kr-USG"/>
+                                            <outlet property="priceViewLeftEdgeConstraint" destination="PsF-Sg-vZF" id="PSN-cf-sZ1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateCell" rowHeight="40" id="Dz6-EA-Tbg" customClass="UISpeiseplanTableViewDateCell" customModule="Mensaplan_2_0" customModuleProvider="target">

@@ -13,6 +13,8 @@ class UISpeiseplanTableViewMealCell: UITableViewCell {
     @IBOutlet weak var priceView: UIPriceView!
     @IBOutlet weak var dangerousIngredientsView: UIView!
     @IBOutlet weak var mealTitleLabel: UILabel!
+    @IBOutlet weak var priceViewLeftEdgeConstraint: NSLayoutConstraint!
+    var showDetailPriceView: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +33,58 @@ class UISpeiseplanTableViewMealCell: UITableViewCell {
     func display(_ meal: Meal?) {
         if let meal = meal {
             mealTitleLabel.text = meal.name
-            priceView.set(price: meal.price)
             mealIconView.display(icons: meal.mealIconTypes)
+            if showDetailPriceView {
+                priceView.setDetail()
+            } else {
+                priceView.set(price: meal.price)
+            }
+        }
+    }
+    
+    /**
+     Returns `true` wenn die PriceView vergrößert wurde
+     */
+    func expandOrShrinkPriceView() -> Bool {
+        if let tableView = superview as? UITableView {
+            if let tvDataSource = tableView.dataSource as? SpeiseplanTableViewDataSource {
+                if let indexPath = tableView.indexPath(for: self) {
+                    if priceViewLeftEdgeConstraint.constant == 5 {
+                        showNormalPriceView()
+                        tvDataSource.removeExpandablePriceView(at: indexPath)
+                        return false
+                    } else {
+                        showBigPriceView()
+                        tvDataSource.appendExpandabledPriceView(at: indexPath)
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    func showBigPriceView(_ animated: Bool = true) {
+        showDetailPriceView = true
+        priceViewLeftEdgeConstraint.constant = 5
+        if animated {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.layoutIfNeeded()
+            })
+        } else {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    func showNormalPriceView(_ animated: Bool = true) {
+        showDetailPriceView = false
+        priceViewLeftEdgeConstraint.constant = 160
+        if animated {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.layoutIfNeeded()
+            })
+        } else {
+            self.layoutIfNeeded()
         }
     }
 

@@ -47,13 +47,3 @@ struct MensaURLBuilder {
 
 
 
-
-
-
-
-
-
-
-
-
-

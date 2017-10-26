@@ -65,7 +65,6 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
             let destCtrl = segue.destination as! AllergiesSelectionTableViewController
             destCtrl.selectionDelegate = self
         }
-        // TODO: ✅ ALergie selection
     }
     
     func loadAppVersion() {
@@ -121,7 +120,6 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     
     // MARK: - MensaSelectionDelegate
     func receive(selection indexPath: IndexPath, canteen: Canteen) {
-        // ❓ wieso haben wir hier früher immer den ViewController von dem wir gekommen sind mit übergeben
         navigationController?.popViewController(animated: true)
         selectedCanteenLabel.text = "Mensa \(canteen.mensaName)"
         changedDic["changedMensa"] = true

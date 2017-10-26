@@ -30,4 +30,16 @@ struct Price {
         let priceDescription = "\(priceLevel.priceLevelName): \(priceFormat)"
         return priceDescription
     }
+    
+    func longDescription() -> String {
+        let plStudent = PriceLevel.student
+        let plServant = PriceLevel.servant
+        let plGuest = PriceLevel.guest
+        let plHföd = PriceLevel.hföd
+        let longPriceDescription = String(format: "%@: %.2f€ | %@: %.2f€ | %@: %.2f€ | %@: %.2f€", arguments: [plStudent.priceLevelName, student,
+                                                                                                                         plServant.priceLevelName, servant,
+                                                                                                                         plGuest.priceLevelName, guest,
+                                                                                                                         plHföd.priceLevelName, hföd])
+        return longPriceDescription
+    }
 }

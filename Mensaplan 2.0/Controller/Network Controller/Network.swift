@@ -15,8 +15,6 @@ class Network {
         let session = URLSession.shared
         task = session.dataTask(with: url) { data, response, error in
             
-            // ❓ Daten "atmor übergeben"
-            // ❓ wieso ein cast zu AnyObject ??? --> Data (struct) müsste dann doch auch atomar sein ???
             supervisor.handleReceivedData(data: data as AnyObject)
         }
         task.resume()

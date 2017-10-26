@@ -26,7 +26,7 @@ class UISpeiseplanTableViewLegendCell: UITableViewCell {
     }
     
     func setUpUI() {
-        // TODO: ✅❓ nicht so toll der Zugriff ?!?!?!!?!!!
+        // TODO: ✅ nicht so toll der Zugriff ?!?!?!!?!!!
         for index in 0..<UIMealIconView.MealIconType.allMeals.count {
             let mealType = UIMealIconView.MealIconType.allMeals[index]
             let mealIcon = mealIcons[index]
