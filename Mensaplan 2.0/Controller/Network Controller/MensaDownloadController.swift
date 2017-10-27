@@ -57,11 +57,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
             }
             
             let workItem = DispatchWorkItem(block: {
-                let calendar = Calendar.current
-                let today = Date()
-                var components = DateComponents()
-                components.day = dayInFuture
-                if let date = calendar.date(byAdding: components, to: today) {
+                if let date = Date.getDate(in: dayInFuture) {
                     let loader = FetchData()
                     loader.delegate = self
                     loader.id = dayInFuture

@@ -35,6 +35,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         loadAppVersion()
         setUpUI()
         setUpDesign()
+        setNumberOfDownloadedDaysLabel()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,6 +45,16 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         let nc = NotificationCenter.default
         nc.post(name: Notification.Name.changedSettings, object: nil, userInfo: changedDic)
         changedDic = [:]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == storyboardSegueIDSettingsToMensaSelection {
+            let destCtrl = segue.destination as! MensaSelectionTableViewController
+            destCtrl.selectionDelegate = self
+        } else if segue.identifier == storyboardSegueIDSettingsToAllergiesSelection {
+            let destCtrl = segue.destination as! AllergiesSelectionTableViewController
+            destCtrl.selectionDelegate = self
+        }
     }
     
     
@@ -67,14 +78,8 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         designAppearanceSwitch.onTintColor = appColor.controllItem
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == storyboardSegueIDSettingsToMensaSelection {
-            let destCtrl = segue.destination as! MensaSelectionTableViewController
-            destCtrl.selectionDelegate = self
-        } else if segue.identifier == storyboardSegueIDSettingsToAllergiesSelection {
-            let destCtrl = segue.destination as! AllergiesSelectionTableViewController
-            destCtrl.selectionDelegate = self
-        }
+    func setNumberOfDownloadedDaysLabel() {
+        numberOfDaysToDownloadLabel.text = "Tage: \(userProfile.numberOfDaysToDownload)"
     }
     
     func loadAppVersion() {
@@ -123,7 +128,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     @IBAction func downloadDaysChangedSliderAction(_ sender: UIStepSlider) {
         let numberOfDaysToDownload = Int(sender.value)
         userProfile.set(numberOfDaysToDownload: numberOfDaysToDownload)
-        numberOfDaysToDownloadLabel.text = "Tage: \(numberOfDaysToDownload)"
+        setNumberOfDownloadedDaysLabel()
         changedDic["changedOfflineDays"] = true
     }
     
