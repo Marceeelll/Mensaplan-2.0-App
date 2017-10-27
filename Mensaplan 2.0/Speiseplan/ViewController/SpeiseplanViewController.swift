@@ -157,8 +157,9 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         refreshButton.isEnabled = true
         tableView.refreshControl?.endRefreshing()
         let dateCellIndexPath = IndexPath(row: 0, section: 0)
-        let dateCell = tableView.cellForRow(at: dateCellIndexPath) as! UISpeiseplanTableViewDateCell
-        dateCell.displayStepperButtonsIfNeeded()
+        if let dateCell = tableView.cellForRow(at: dateCellIndexPath) as? UISpeiseplanTableViewDateCell {
+            dateCell.displayStepperButtonsIfNeeded()
+        }
         tableView.reloadData()
         MensaData().didUpdate()
     }

@@ -48,20 +48,25 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
             }
             
             let workItem = DispatchWorkItem(block: {
-                let oneDay: TimeInterval = 60*60*24 // 🚨
-                let futureTimeInterval = oneDay * TimeInterval(dayInFuture)
-                let date = Date(timeIntervalSinceNow: futureTimeInterval)
-                
-                let loader = FetchData()
-                loader.delegate = self
-                loader.id = dayInFuture
-                loader.date = date
-                
-                self.loaders.append(loader) // 🚨 ???????
-                
-                let url = self.urlBuilder.url(for: date)
-                
-                loader.fetchData(for: url)
+                let calendar = Calendar.current
+                let today = Date()
+                var components = DateComponents()
+                components.day = dayInFuture
+                if let date = calendar.date(byAdding: components, to: today) {
+                    let loader = FetchData()
+                    loader.delegate = self
+                    loader.id = dayInFuture
+                    loader.date = date
+                    
+                    let serialQueue = DispatchQueue(label: "serialQueue")
+                    serialQueue.sync {
+                        self.loaders.append(loader)
+                    }
+                    
+                    let url = self.urlBuilder.url(for: date)
+                    
+                    loader.fetchData(for: url)
+                }
             })
             
             workItems.append(workItem)
