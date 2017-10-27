@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AppColor {
+struct AppColor: Codable {
     var appearance: Appearance
     
     init(appearance: Appearance) {
@@ -128,7 +128,7 @@ class AppColor {
     
     
     
-    enum Appearance: String {
+    enum Appearance: String, Codable {
         case light = "light"
         case dark = "dark"
     }

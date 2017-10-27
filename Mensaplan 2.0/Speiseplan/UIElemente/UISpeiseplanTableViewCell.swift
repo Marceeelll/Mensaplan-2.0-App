@@ -19,17 +19,20 @@ class UISpeiseplanTableViewMealCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        dangerousIngredientsView.makeViewRound()
-        dangerousIngredientsView.backgroundColor = appColor.warningOfIngredients
-        priceView.backgroundColor = appColor.priceView
-        mealTitleLabel.textColor = appColor.text
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUpUI() {
+        dangerousIngredientsView.makeViewRound()
+        dangerousIngredientsView.backgroundColor = appColor.warningOfIngredients
+        priceView.backgroundColor = appColor.priceView
+        mealTitleLabel.textColor = appColor.text
+        self.backgroundColor = appColor.background
     }
     
     func display(_ meal: Meal?) {

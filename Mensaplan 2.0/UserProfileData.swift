@@ -34,12 +34,20 @@ class UserProfileData {
         return model.numberOfDaysToDownload
     }
     
+    var appColor: AppColor {
+        return model.appColor
+    }
+    
     func set(new priceLevel: PriceLevel) {
         model.priceLevel = priceLevel
     }
     
     func set(new canteen: Canteen) {
         model.canteen = canteen
+    }
+    
+    func set(appearance: AppColor.Appearance) {
+        model.appColor.appearance = appearance
     }
     
     var canteen: Canteen {
@@ -112,4 +120,5 @@ struct UserProfileDataSingleton: Codable {
     var priceLevel: PriceLevel = .student
     var numberOfDaysToDownload: Int = 7
     var canteen = Canteen.Hof
+    var appColor = AppColor(appearance: .light)
 }

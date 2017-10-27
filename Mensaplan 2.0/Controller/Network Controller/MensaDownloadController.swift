@@ -10,6 +10,7 @@ import Foundation
 
 class MensaDownloadController : NSObject, FetchDataDelegate {
     var invalidated: Bool = false
+    var didErrorOccured: Bool = false
     
     var mensaData = MensaData()
     
@@ -30,6 +31,14 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
         downloadGroup = DispatchGroup()
     }
     
+    func didFinished(with error: Error) {
+        if !didErrorOccured {
+            delegate?.downloadError(description: error.localizedDescription)
+            invalidate()
+        }
+        didErrorOccured = true
+        downloadGroup.leave()
+    }
     
     func didFinishedDataProcessing(for id: Int, with data: MensaDay) {
         tmpMensaData.append(data)
@@ -90,7 +99,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     }
     
     func invalidate() {
-        dispatchPrecondition(condition: .onQueue(.main))
+//        dispatchPrecondition(condition: .onQueue(.main))
         invalidated = true
         cancelAllNetworkConnections()
         cancelAllJobs()
@@ -111,6 +120,7 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     
     private func resetAll() {
         invalidated = false
+        didErrorOccured = false
         downloadGroup = DispatchGroup()
         workItems = []
         tmpMensaData = []
@@ -120,9 +130,11 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     
     private func processedDownloadedData() {
         print("!!! All Data Downloaded !!!")
-        mensaData.set(mensaDays: tmpMensaData)
+        if !didErrorOccured {
+            mensaData.set(mensaDays: tmpMensaData)
+            mensaData.sortMensaDays()
+        }
         self.resetAll()
-        mensaData.sortMensaDays()
         delegate?.downloadDone()
     }
 }

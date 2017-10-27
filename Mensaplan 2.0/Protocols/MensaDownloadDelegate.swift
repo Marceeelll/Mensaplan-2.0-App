@@ -12,4 +12,5 @@ protocol MensaDownloadDelegate {
 //    func downloadStarted()
     func downloadDone()
     func download(alreadyDownloaded: Int, of allDownloads: Int)
+    func downloadError(description: String)
 }

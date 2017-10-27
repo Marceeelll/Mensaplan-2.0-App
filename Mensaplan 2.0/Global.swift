@@ -28,7 +28,10 @@ let storyboardSegueIDSpeiseplanToMealDetail = "storyboardSegueIDSpeiseplanToMeal
 let storyboardSegueIDSettingsToAllergiesSelection = "storyboardSegueIDSettingsToAllergiesSelection"
 
 // MARK: - Global Variables
-var appColor = AppColor(appearance: .dark)
+//var appColor = AppColor(appearance: .light)
+var appColor: AppColor {
+    return userProfile.appColor
+}
 let userProfile = UserProfileData()
 
 struct MensaURLBuilder {

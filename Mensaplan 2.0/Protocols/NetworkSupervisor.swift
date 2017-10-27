@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NetworkSupervisor {
-    func handleReceivedData(data: AnyObject)
+    func handleReceived(data: AnyObject)
+    func handleReceived(error: Error)
 }

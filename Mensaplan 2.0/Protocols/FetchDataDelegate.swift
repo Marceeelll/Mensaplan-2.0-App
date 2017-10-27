@@ -10,4 +10,5 @@ import Foundation
 
 protocol FetchDataDelegate {
     func didFinishedDataProcessing(for id: Int, with data: MensaDay)
+    func didFinished(with error: Error)
 }

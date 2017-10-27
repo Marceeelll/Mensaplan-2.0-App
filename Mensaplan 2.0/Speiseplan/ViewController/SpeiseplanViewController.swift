@@ -46,8 +46,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         }
         
         setUpUI()
-        setUpDesign(for: self.navigationController, for: self.tabBarController)
-        tableView.backgroundColor = appColor.background
+        setUpDesign()
         
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(changedSettings(_:)), name: Notification.Name.changedSettings, object: nil)
@@ -67,12 +66,32 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
     
     
     // MARK: - Help Methods
+    func setUpDesign() {
+        Mensaplan_2_0.setUpDesign(for: self.navigationController, for: self.tabBarController)
+        tableView.backgroundColor = appColor.background
+        adjustVisibleCellsAndHeaders()
+    }
+    
+    func adjustVisibleCellsAndHeaders() {
+        var rowsToReload: [IndexPath] = []
+        var headerSections = IndexSet()
+        for cell in tableView.visibleCells {
+            if let indexPath = tableView.indexPath(for: cell) {
+                rowsToReload.append(indexPath)
+                headerSections.insert(indexPath.section)
+            }
+        }
+        tableView.reloadRows(at: rowsToReload, with: .automatic)
+        tableView.reloadSections(headerSections, with: .automatic)
+    }
+    
     @objc func changedSettings(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             var changedOfflineDays = false
             var changedAllergies = false
             var changedTarif = false
             var changedMensa = false
+            var changedDesign = false
             
             if let offlineDays = userInfo["changedOfflineDays"] as? Bool {
                 changedOfflineDays = offlineDays
@@ -86,6 +105,9 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
             if let mensa = userInfo["changedMensa"] as? Bool {
                 changedMensa = mensa
             }
+            if let design = userInfo["changedDesign"] as? Bool {
+                changedDesign = design
+            }
             
             if changedOfflineDays || changedMensa {
                 MensaData().reset()
@@ -94,6 +116,10 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
             }
             if changedOfflineDays || changedMensa || changedTarif || changedAllergies {
                 tableView.reloadData()
+            }
+            
+            if changedDesign {
+                setUpDesign()
             }
             
         }
@@ -109,7 +135,7 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         
         disableDownloadProgressView(false)
     }
-
+    
     
     // MARK: - Animations
     func showDownloadProgressView() {
@@ -168,6 +194,13 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         DispatchQueue.main.async {
             self.downloadProgressView.setProgress(alreadyDownloaded, of: allDownloads)
         }
+    }
+    
+    func downloadError(description: String) {
+        let errorAlert = UIAlertController(title: description, message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        errorAlert.addAction(cancel)
+        present(errorAlert, animated: true)
     }
     
 }

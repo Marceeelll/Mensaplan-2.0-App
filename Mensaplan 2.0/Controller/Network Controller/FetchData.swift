@@ -19,7 +19,7 @@ class FetchData : NSObject, NetworkSupervisor {
         network.getData(from: url, supervisor: self)
     }
     
-    func handleReceivedData(data: AnyObject) {
+    func handleReceived(data: AnyObject) {
         var mensaDay: MensaDay! // 🚨 gefähliches unwrapped optional
         if let d = data as? Data {
             if let htmlString = String(data: d, encoding: String.Encoding.utf8) {
@@ -32,6 +32,10 @@ class FetchData : NSObject, NetworkSupervisor {
             mensaDay = MensaDay(date: date, mealCategories: nil)
         }
         delegate?.didFinishedDataProcessing(for: id, with: mensaDay)
+    }
+    
+    func handleReceived(error: Error) {
+        delegate?.didFinished(with: error)
     }
     
     func cancel() {

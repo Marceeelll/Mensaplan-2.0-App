@@ -14,8 +14,11 @@ class Network {
     func getData(from url: URL, supervisor: NetworkSupervisor) {
         let session = URLSession.shared
         task = session.dataTask(with: url) { data, response, error in
-            
-            supervisor.handleReceivedData(data: data as AnyObject)
+            if error != nil {
+                supervisor.handleReceived(error: error!)
+            } else {
+                supervisor.handleReceived(data: data as AnyObject)
+            }
         }
         task.resume()
     }

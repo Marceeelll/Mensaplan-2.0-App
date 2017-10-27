@@ -50,18 +50,18 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
         if isDateCell(indexPath) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath) as! UISpeiseplanTableViewDateCell
             cell.dateLabel.text = data.date.germanDate
-            cell.backgroundColor = appColor.background
+            cell.setUpUI()
             return cell
         }
         
         if isLegend(section: indexPath.section) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "legendCell", for: indexPath)  as! UISpeiseplanTableViewLegendCell
-            cell.backgroundColor = appColor.background
+            cell.setUpUI()
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! UISpeiseplanTableViewMealCell
-        cell.backgroundColor = appColor.background
+        cell.setUpUI()
         
         if data.mealCategories == nil {
             let errorMeal = Meal(name: "Am gewählten Tag sind keine Gerichte verfügbar",

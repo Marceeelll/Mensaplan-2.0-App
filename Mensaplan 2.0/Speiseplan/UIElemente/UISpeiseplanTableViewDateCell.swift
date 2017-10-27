@@ -17,19 +17,21 @@ class UISpeiseplanTableViewDateCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        dateLabel.textColor = appColor.text
-        previousMensaDayButton.setTitleColor(appColor.text, for: .normal)
-        previousMensaDayButton.setTitleColor(UIColor.lightGray, for: .disabled)
-        nextMensaDayButton.setTitleColor(appColor.text, for: .normal)
-        nextMensaDayButton.setTitleColor(UIColor.lightGray, for: .disabled)
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUpUI() {
+        dateLabel.textColor = appColor.text
+        previousMensaDayButton.setTitleColor(appColor.text, for: .normal)
+        previousMensaDayButton.setTitleColor(UIColor.lightGray, for: .disabled)
+        nextMensaDayButton.setTitleColor(appColor.text, for: .normal)
+        nextMensaDayButton.setTitleColor(UIColor.lightGray, for: .disabled)
+        self.backgroundColor = appColor.background
     }
     
     @IBAction func showNextDayAction(_ sender: UIButton) {

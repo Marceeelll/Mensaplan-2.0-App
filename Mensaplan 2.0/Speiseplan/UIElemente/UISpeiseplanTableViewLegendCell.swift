@@ -36,6 +36,7 @@ class UISpeiseplanTableViewLegendCell: UITableViewCell {
             mealLabel.text = mealType.name
             mealLabel.textColor = appColor.text
         }
+        self.backgroundColor = appColor.background
     }
 
 }

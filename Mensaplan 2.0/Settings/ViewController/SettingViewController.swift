@@ -52,6 +52,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
         appNameVersionLabel.text = "\(appName) \(version)"
         downloadDaysSlider.value = Float(userProfile.numberOfDaysToDownload)
         selectedCanteenLabel.text = "Mensa \(userProfile.canteen.mensaName)"
+        designAppearanceSwitch.isOn = appColor.appearance == .dark
         
         for index in 0..<PriceLevel.allPriceLevels.count {
             let priceLevel = PriceLevel.allPriceLevels[index]
@@ -128,9 +129,10 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     
     @IBAction func changedDesignSwitchAction(_ sender: UISwitch) {
         switch appColor.appearance {
-        case .dark: appColor.appearance = .light
-        case .light: appColor.appearance = .dark
+        case .dark: userProfile.set(appearance: .light)
+        case .light: userProfile.set(appearance: .dark)
         }
+        changedDic["changedDesign"] = true
     }
     
     
