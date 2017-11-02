@@ -35,7 +35,15 @@ class UISpeiseplanTableViewDateCell: UITableViewCell {
     }
     
     @IBAction func showNextDayAction(_ sender: UIButton) {
+        // iPhone
         if let tableView = self.superview as? UITableView {
+            let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
+            dSource.nextMensaDay()
+            displayStepperButtonsIfNeeded()
+            tableView.reloadData()
+        }
+        // iPad
+        if let tableView = self.superview?.superview as? UITableView {
             let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
             dSource.nextMensaDay()
             displayStepperButtonsIfNeeded()
@@ -44,7 +52,15 @@ class UISpeiseplanTableViewDateCell: UITableViewCell {
     }
     
     @IBAction func showPreviousDayAction(_ sender: UIButton) {
+        // iPhone
         if let tableView = self.superview as? UITableView {
+            let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
+            dSource.previousMensaDay()
+            displayStepperButtonsIfNeeded()
+            tableView.reloadData()
+        }
+        // iPad
+        if let tableView = self.superview?.superview as? UITableView {
             let dSource = tableView.dataSource as! SpeiseplanTableViewDataSource
             dSource.previousMensaDay()
             displayStepperButtonsIfNeeded()
