@@ -99,19 +99,15 @@ struct MensaDayParser {
     private func splitMeal(in string: String) -> Meal? {
         guard let mealName = splitMealName(in: string)
             else { return nil }
-        //        print(mealName)
         
         guard let mealPrice = splitMealPrice(in: string)
             else { return nil }
-        //        print("\t\(mealPrice)")
         
         guard let mealAttributes = splitMealAttributes(in: string)
             else { return nil }
-        //        print("\t\(mealAttributes)")
         
         guard let mealIngredients = splitMealIngredients(in: string)
             else { return nil }
-        //        print("\t\(mealIngredients)")
         
         let meal = Meal(name: mealName, attributes: mealAttributes, price: mealPrice, ingredients: mealIngredients)
         return meal

@@ -150,12 +150,10 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
     }
     
     func hasNextMensaDay() -> Bool {
-        print("currentIndex: \(currentIndex) - \(mensaData.numberOfMensaDays)")
         return currentIndex < mensaData.numberOfMensaDays - 1
     }
     
     func hasPreviousMensaDay() -> Bool {
-        print("currentIndex: \(currentIndex)")
         return currentIndex > 0
     }
     
@@ -163,7 +161,6 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
         if hasNextMensaDay() {
             currentIndex += 1
             data = mensaData.getMensaDay(for: currentIndex)
-            print("currentIndex: \(currentIndex)")
         }
     }
     
@@ -171,7 +168,6 @@ class SpeiseplanTableViewDataSource : NSObject, UITableViewDataSource {
         if hasPreviousMensaDay() {
             currentIndex -= 1
             data = mensaData.getMensaDay(for: currentIndex)
-            print("currentIndex: \(currentIndex)")
         }
     }
     

@@ -99,7 +99,6 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
         invalidated = true
         cancelAllNetworkConnections()
         cancelAllJobs()
-        print("--invalidate()")
     }
     
     private func cancelAllJobs() {
@@ -125,12 +124,12 @@ class MensaDownloadController : NSObject, FetchDataDelegate {
     }
     
     private func processedDownloadedData() {
-        print("!!! All Data Downloaded !!!")
         if !didErrorOccured {
             mensaData.set(mensaDays: tmpMensaData)
             mensaData.sortMensaDays()
         }
         self.resetAll()
+        MensaData().didUpdate()
         delegate?.downloadDone()
     }
 }

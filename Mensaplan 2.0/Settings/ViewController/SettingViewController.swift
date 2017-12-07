@@ -23,7 +23,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     
     // MARK: - Instance Variable
     let appName = "Mensaplan"
-    var version = "2.0"
+    var version = "x.x"
     
     var changedDic: [String:Bool] = [:]
     

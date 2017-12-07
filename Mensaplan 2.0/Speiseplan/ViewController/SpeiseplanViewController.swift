@@ -165,7 +165,6 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
     
     // MARK: - IBActions
     @IBAction func startDownloadAction(_ sender: UIBarButtonItem) {
-        print("Start Download Action")
         downloadCtrl.start()
         downloadProgressView.start()
         showDownloadProgressView()
@@ -175,8 +174,6 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
     
     // MARK: - MensaDownloadDelegate
     func downloadDone() {
-        print("Download Done")
-
         dataSource.reloadCurrentMensaDay()
         downloadProgressView.stop()
         disableDownloadProgressView()
@@ -187,7 +184,6 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
             dateCell.displayStepperButtonsIfNeeded()
         }
         tableView.reloadData()
-        MensaData().didUpdate()
     }
     
     func download(alreadyDownloaded: Int, of allDownloads: Int) {
@@ -202,15 +198,5 @@ class SpeiseplanViewController: UIViewController, MensaDownloadDelegate {
         errorAlert.addAction(cancel)
         present(errorAlert, animated: true)
     }
-    
 }
-
-
-
-
-
-
-
-
-
 

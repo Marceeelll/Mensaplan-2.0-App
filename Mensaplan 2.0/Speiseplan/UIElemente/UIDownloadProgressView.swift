@@ -24,7 +24,6 @@ class UIDownloadProgressView: UIView {
     }
     
     @IBAction func cancelDownloadAction(_ sender: UIButton) {
-        print("Canceld Download Button Action")
         if let cancelClosure = cancelClosure {
             cancelClosure()
         }

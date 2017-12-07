@@ -110,11 +110,7 @@ struct UserProfileDataSingleton: Codable {
     static var sharedInstance = UserProfileDataSingleton()
     private init() {}
     
-    var allergicTypes: [Handicap] = [] {
-        didSet {
-            print("allergicTypes: \(allergicTypes)")
-        }
-    }
+    var allergicTypes: [Handicap] = []
     var lifestyle: [Handicap] = []
     var dangerousIngredients: [Ingredient] = []
     var priceLevel: PriceLevel = .student

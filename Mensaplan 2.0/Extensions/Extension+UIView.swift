@@ -12,7 +12,7 @@ extension UIView {
     /**
      Rundet die Ecken der View so stark ab, dass ein Kreis entsteht.
      
-     View sollte rund sein.
+     View sollte quadratisch sein.
      */
     func makeViewRound() {
         self.layer.cornerRadius = self.frame.width/2
