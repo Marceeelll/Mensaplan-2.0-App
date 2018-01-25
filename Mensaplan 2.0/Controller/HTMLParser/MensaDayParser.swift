@@ -180,12 +180,21 @@ struct MensaDayParser {
         // 🚨 Bug: Bei dem letzten Element von allen, wird das Attribute nicht richtig ausgelesen
         //         Der Grund ist, dass in der nachfolgende Zeile, das erste Element gelöscht wird, was auch bei allen anderen Meals korrekt ist
         //         Allerdings befindet sich bei der letzten Speise die Informationen darin
-        splittedAttributes.removeFirst()
+        if let firstHTMLElement = splittedAttributes.first, !mealContainsCarrotIcon(in: firstHTMLElement) {
+            splittedAttributes.removeFirst()
+        }
         var attributes: [String] = []
         for attributeHTMLString in splittedAttributes {
             if !attributeHTMLString.contains("Alle Ansprechpartner") { // TODO: ✅ Nicht schön gemacht...
                 if let attribute = attributeHTMLString.slice(from: "title=\"", to: "\">") {
                     attributes.append(attribute)
+                }
+                
+                // Abfrage ist notwendig, seit Mitte Januar 2018 (aufgrund von Änderungen an der Webseite), da sonst kein Veganes Icon gefunden wird
+                if isMealVegan(html: attributeHTMLString) {
+                    let veganAttribute = UIMealIconView.MealIconType.vegan
+                    let veganAttributeString = veganAttribute.name
+                    attributes.append(veganAttributeString)
                 }
             }
         }
@@ -215,5 +224,16 @@ struct MensaDayParser {
             }
         }
         return true
+    }
+    
+    private func isMealVegan(html: String) -> Bool {
+        // Seit Mitte Januar 2018, ist das "Vegane"-Icon nicht mehr als title im HTML-Code vorhanden.
+        // Diese wurde durch folgende ersetzt:
+        //      <img src="fileadmin/templates/default/img/icons/uEA03-karotte.png"
+        return mealContainsCarrotIcon(in: html)
+    }
+    
+    private func mealContainsCarrotIcon(in html: String) -> Bool {
+        return html.contains("karotte.png")
     }
 }

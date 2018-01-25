@@ -184,7 +184,7 @@ class UIMealIconView : UIView {
             case "regional": return .regional
             case "Meeresfrüchte": return .seafood
             case "nachhaltiger Fang": return .sustainableCatch
-            case "vegan": return .vegan
+            case "Vegan": return .vegan
             case "vegetarisch": return .vegetarian
             case "Wild": return .wild
             default: return .error
