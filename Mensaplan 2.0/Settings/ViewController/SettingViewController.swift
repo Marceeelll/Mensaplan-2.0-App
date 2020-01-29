@@ -112,7 +112,7 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
             SKStoreReviewController.requestReview()
         } else {
             let appStoreLink = URL(string: "https://itunes.apple.com/us/app/mensaplan-oberfranken-bayern/id1111214856?ls=1&mt=8")!
-            UIApplication.shared.open(appStoreLink, options: [:], completionHandler: nil)
+            UIApplication.shared.open(appStoreLink, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         }
     }
     
@@ -179,4 +179,9 @@ class SettingViewController: UITableViewController, MensaSelectionDelegate, Alle
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         dismiss(animated: true)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

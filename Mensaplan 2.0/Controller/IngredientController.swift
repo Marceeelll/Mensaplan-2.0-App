@@ -9,8 +9,8 @@
 import UIKit
 
 class IngredientController {
-    let dangerousAttributes : [NSAttributedStringKey : Any] = [.foregroundColor:appColor.dangerousText]
-    let notDangerousAttributes : [NSAttributedStringKey : Any] = [.foregroundColor:appColor.text]
+    let dangerousAttributes : [NSAttributedString.Key : Any] = [.foregroundColor:appColor.dangerousText]
+    let notDangerousAttributes : [NSAttributedString.Key : Any] = [.foregroundColor:appColor.text]
     
     func highligtDangerousIngredients(in meal: Meal) -> NSAttributedString {
         let result = NSMutableAttributedString()

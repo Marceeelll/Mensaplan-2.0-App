@@ -55,7 +55,7 @@ class UserProfileData {
     }
     
     func addOrRemove(ingredient: Ingredient) {
-        if let index = dangerousIngredients.index(of: ingredient) {
+        if let index = dangerousIngredients.firstIndex(of: ingredient) {
             model.dangerousIngredients.remove(at: index)
         } else {
             model.dangerousIngredients.append(ingredient)
@@ -72,14 +72,14 @@ class UserProfileData {
     
     func remove(ingredients: [Ingredient]) {
         for ingredient in ingredients {
-            if let index = dangerousIngredients.index(of: ingredient) {
+            if let index = dangerousIngredients.firstIndex(of: ingredient) {
                 model.dangerousIngredients.remove(at: index)
             }
         }
     }
     
     func addOrRemove(lifestyle: Handicap) {
-        if let index = self.lifestyle.index(of: lifestyle) {
+        if let index = self.lifestyle.firstIndex(of: lifestyle) {
             model.lifestyle.remove(at: index)
         } else {
             model.lifestyle.append(lifestyle)
@@ -87,13 +87,13 @@ class UserProfileData {
     }
     
     func remove(lifestyle: Handicap) {
-        if let index = self.lifestyle.index(of: lifestyle) {
+        if let index = self.lifestyle.firstIndex(of: lifestyle) {
             model.lifestyle.remove(at: index)
         }
     }
     
     func addOrRemove(allergy: Handicap) {
-        if let index = self.allergicTypes.index(of: allergy) {
+        if let index = self.allergicTypes.firstIndex(of: allergy) {
             model.allergicTypes.remove(at: index)
         } else {
             model.allergicTypes.append(allergy)

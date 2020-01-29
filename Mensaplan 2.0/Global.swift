@@ -52,7 +52,7 @@ func setUpDesign(for navigationController: UINavigationController?, for tabBarCo
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.barTintColor = appColor.navigationBarBackground
     navigationController?.navigationBar.tintColor = appColor.navigationBarText
-    navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:appColor.navigationBarText]
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:appColor.navigationBarText]
     
     tabBarController?.tabBar.isTranslucent = false
     tabBarController?.tabBar.barTintColor = appColor.navigationBarBackground
