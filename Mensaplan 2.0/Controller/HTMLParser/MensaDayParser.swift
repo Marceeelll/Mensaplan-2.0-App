@@ -158,6 +158,7 @@ struct MensaDayParser {
         for priceHTMLString in splittedPrices {
             if var priceString = priceHTMLString.slice(from: "&euro; ", to: "</span>") {
                 priceString = priceString.replacingOccurrences(of: ",", with: ".")
+                priceString = priceString.trimmingCharacters(in: .whitespacesAndNewlines)
                 if let price = Double(priceString) {
                     prices.append(price)
                 }
